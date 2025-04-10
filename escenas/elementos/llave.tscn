@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1ai3np7iftuy"]
+
+[ext_resource type="Texture2D" uid="uid://k3fenugakncw" path="res://assets/llave2.png" id="1_sn31t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5wv83"]
+radius = 71.5019
+height = 246.371
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Llave2" type="Sprite2D" parent="."]
+position = Vector2(6, -3)
+texture = ExtResource("1_sn31t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 0.743647
+shape = SubResource("CapsuleShape2D_5wv83")

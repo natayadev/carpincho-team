@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgtvnn0dc7o5"]
+
+[ext_resource type="PackedScene" uid="uid://bjmr26ku2c7y6" path="res://escenas/personaje/personaje.tscn" id="1_p1ihv"]
+[ext_resource type="Script" uid="uid://gj41wu8trr63" path="res://escenas/gamemanager.gd" id="1_r0eip"]
+[ext_resource type="PackedScene" uid="uid://bnytrr5yh44ld" path="res://escenas/enemigo/enemigo.tscn" id="3_okgt3"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="gamemanager" type="Node" parent="." node_paths=PackedStringArray("characters", "enemies_parent")]
+script = ExtResource("1_r0eip")
+characters = [NodePath("../players/personaje"), NodePath("../players/CharacterBody2D")]
+enemies_parent = NodePath("../enemys")
+
+[node name="players" type="Node2D" parent="."]
+
+[node name="personaje" parent="players" instance=ExtResource("1_p1ihv")]
+position = Vector2(117, 121)
+
+[node name="CharacterBody2D" parent="players" instance=ExtResource("1_p1ihv")]
+position = Vector2(385, 365)
+
+[node name="enemys" type="Node2D" parent="."]
+position = Vector2(-2, -2)
+
+[node name="enemigo" parent="enemys" instance=ExtResource("3_okgt3")]
+position = Vector2(890, 141)
+scale = Vector2(1.95092, 1.77729)
+
+[node name="enemigo2" parent="enemys" instance=ExtResource("3_okgt3")]
+position = Vector2(926, 334)
+scale = Vector2(1.95092, 1.77729)
