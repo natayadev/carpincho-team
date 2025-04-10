@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cep8rnb2w1c60"]
+
+[ext_resource type="FontFile" uid="uid://cyl0lhg5fhw3k" path="res://fonts/font_1.tres" id="1_tj4vj"]
+[ext_resource type="Script" uid="uid://l5i6np4lc540" path="res://menu/atras.gd" id="2_3rl2b"]
+
+[node name="Creditos" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_fonts/font = ExtResource("1_tj4vj")
+theme_override_font_sizes/font_size = 32
+text = "Hecho por:
+Naty
+Bruno
+Facu
+Santy
+Joel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="atras" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 480.0
+offset_right = 704.0
+offset_bottom = 544.0
+theme_override_fonts/font = ExtResource("1_tj4vj")
+theme_override_font_sizes/font_size = 32
+text = "atras"
+script = ExtResource("2_3rl2b")

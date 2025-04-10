@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6kgt8psl3v17"]
+
+[ext_resource type="FontFile" uid="uid://cyl0lhg5fhw3k" path="res://fonts/font_1.tres" id="1_g18jx"]
+[ext_resource type="Script" uid="uid://b1cmgof1ru1bn" path="res://menu/jugar.gd" id="1_j0t7f"]
+[ext_resource type="Script" uid="uid://cwby8qb6nqp7a" path="res://menu/salir.gd" id="3_6nwqt"]
+[ext_resource type="Script" uid="uid://b08qugx8l7rsg" path="res://menu/opciones.gd" id="3_svuvw"]
+[ext_resource type="Script" uid="uid://c1v2nmd3jvv2t" path="res://menu/creditos.gd" id="4_juveg"]
+
+[node name="Menu" type="Node2D"]
+
+[node name="jugar" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 192.0
+offset_right = 704.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("1_g18jx")
+theme_override_font_sizes/font_size = 32
+text = "Jugar"
+script = ExtResource("1_j0t7f")
+
+[node name="opciones" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 264.0
+offset_right = 704.0
+offset_bottom = 328.0
+theme_override_fonts/font = ExtResource("1_g18jx")
+theme_override_font_sizes/font_size = 32
+text = "opciones"
+script = ExtResource("3_svuvw")
+
+[node name="creditos" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 336.0
+offset_right = 704.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("1_g18jx")
+theme_override_font_sizes/font_size = 32
+text = "creditos"
+script = ExtResource("4_juveg")
+
+[node name="salir" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 408.0
+offset_right = 704.0
+offset_bottom = 472.0
+theme_override_fonts/font = ExtResource("1_g18jx")
+theme_override_font_sizes/font_size = 32
+text = "salir"
+script = ExtResource("3_6nwqt")

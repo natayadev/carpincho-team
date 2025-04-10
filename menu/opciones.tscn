@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://c206mujg0qrxm"]
+
+[ext_resource type="FontFile" uid="uid://cyl0lhg5fhw3k" path="res://fonts/font_1.tres" id="1_8jpbi"]
+[ext_resource type="Script" uid="uid://l5i6np4lc540" path="res://menu/atras.gd" id="2_xj504"]
+
+[node name="Opciones" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 480.0
+offset_top = 128.0
+offset_right = 672.0
+offset_bottom = 184.0
+theme_override_fonts/font = ExtResource("1_8jpbi")
+theme_override_font_sizes/font_size = 32
+text = "Opciones"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="atras" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 264.0
+offset_right = 704.0
+offset_bottom = 328.0
+theme_override_fonts/font = ExtResource("1_8jpbi")
+theme_override_font_sizes/font_size = 32
+text = "atras"
+script = ExtResource("2_xj504")
