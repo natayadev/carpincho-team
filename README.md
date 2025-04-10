@@ -1,5 +1,5 @@
 
-<img width="5%" align="left" alt="Carpincho Team Logo" src="assets/logo.png" />
+<img width="5%" align="left" alt="Carpincho Team Logo" src="assets/icon-team.png" />
 <h1 align="center">Unnamed Game</h3>
 
 ---
