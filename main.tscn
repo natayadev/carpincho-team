@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuphtspclqawb"]
+
+[ext_resource type="Script" uid="uid://db73mp2au66sl" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://d1f7eabgfc3gq" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://c6bqruikxwql0" path="res://hud.tscn" id="4_1bvp3"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_0xm2m")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.795708, 0.375508, 0.339074, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(240, 450)
+
+[node name="HUD" parent="." instance=ExtResource("4_1bvp3")]
+
+[connection signal="hit" from="Player" to="." method="game_over"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]
