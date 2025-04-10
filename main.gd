@@ -12,6 +12,7 @@ func new_game():
 	$StartTimer.start()
 	$HUD.update_score(score)
 	$HUD.show_message("Get Ready")
+	$BackgroundMusic.play()
 
 func _on_score_timer_timeout():
 	score += 1

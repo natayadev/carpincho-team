@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://do6xp0swnisox"]
+
+[ext_resource type="Script" uid="uid://dq2cprjhwmuso" path="res://bola_veneno.gd" id="1_wurf5"]
+[ext_resource type="Texture2D" uid="uid://c6jt4nsfehtow" path="res://art/bolita.png" id="2_dvnb6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbkp1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dvnb6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q2k0n"]
+
+[node name="Bolitadefuego" type="Area2D"]
+script = ExtResource("1_wurf5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mbkp1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_q2k0n")
+
+[node name="ShotDuration" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="ShotDuration" to="." method="destruirBala"]
