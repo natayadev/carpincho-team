@@ -1,11 +1,11 @@
 
-<img width="5%" align="left" alt="Carpincho Team Logo" src="assets/icon-team.png" />
-<h1 align="center">Unnamed Game</h3>
+<img width="10%" align="left" alt="Carpincho Team Logo" src="assets/icon-team.png" />
 
----
+<h1 align="rigth">Unnamed Game</h3>
+
+
 
 🎮 Un videojuego RPG creado en Godot Engine 4.4 donde el protagonista es el animal más chill del planeta: el carpincho, realizado para la Godot Game Jam por Carpincho Team.
-
 
 
 ### Cómo ejecutar el juego
