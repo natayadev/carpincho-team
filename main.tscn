@@ -17,6 +17,7 @@ size = Vector2(148, 20)
 script = ExtResource("1_0xm2m")
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+collision_mask = 2
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
@@ -30,6 +31,7 @@ position = Vector2(240, 450)
 [node name="HUD" parent="." instance=ExtResource("4_1bvp3")]
 
 [node name="RedArea" type="Area2D" parent="."]
+collision_layer = 2
 script = SubResource("GDScript_h2yge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedArea"]
@@ -38,6 +40,7 @@ shape = SubResource("RectangleShape2D_h2yge")
 debug_color = Color(0.980392, 0, 0.392157, 0.713726)
 
 [node name="BlueArea" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlueArea"]
 position = Vector2(160, 580)
@@ -54,8 +57,7 @@ stream = ExtResource("5_7mycd")
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
-[connection signal="body_entered" from="RedArea" to="." method="_on_red_area_body_entered"]
-[connection signal="body_entered" from="RedArea" to="Player" method="_on_red_area_body_entered"]
-[connection signal="body_exited" from="RedArea" to="Player" method="_on_red_area_body_exited"]
-[connection signal="body_entered" from="BlueArea" to="Player" method="_on_blue_area_body_entered"]
-[connection signal="body_exited" from="BlueArea" to="Player" method="_on_blue_area_body_exited"]
+[connection signal="area_entered" from="RedArea" to="Player" method="_on_red_area_area_entered"]
+[connection signal="area_exited" from="RedArea" to="Player" method="_on_red_area_area_exited"]
+[connection signal="area_entered" from="BlueArea" to="Player" method="_on_blue_area_area_entered"]
+[connection signal="area_exited" from="BlueArea" to="Player" method="_on_blue_area_area_exited"]

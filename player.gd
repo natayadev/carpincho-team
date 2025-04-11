@@ -52,7 +52,7 @@ func _process(delta):
 		health = max(health, 0)
 		emit_signal("health_changed", health)
 		if health == 0:
-			_on_body_entered(self)
+			_on_player_death()
 
 	# Recuperación de energía
 	if touching_blue:
@@ -60,7 +60,7 @@ func _process(delta):
 		stamina = min(stamina, max_stamina)
 		emit_signal("stamina_changed", stamina)
 
-func _on_body_entered(_body: Node2D) -> void:
+func _on_player_death():
 	hide()
 	hit.emit()
 	$CollisionShape2D.set_deferred("disabled", true)
@@ -70,18 +70,22 @@ func start(pos):
 	show()
 	$CollisionShape2D.disabled = false
 	
-func _on_red_area_body_entered(body):
+func _on_red_area_area_entered(body):
 	if body == self:
 		touching_red = true
+		print("Entré en zona roja")
 
-func _on_red_area_body_exited(body):
+func _on_red_area_area_exited(body):
 	if body == self:
 		touching_red = false
+		print("Salí de zona roja")
 
-func _on_blue_area_body_entered(body):
+func _on_blue_area_area_entered(body):
 	if body == self:
 		touching_blue = true
+		print("Entré en zona azul")
 
-func _on_blue_area_body_exited(body):
+func _on_blue_area_area_exited(body):
 	if body == self:
 		touching_blue = false
+		print("Salí de zona azul")

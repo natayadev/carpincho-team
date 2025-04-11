@@ -101,8 +101,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b26j0"]
-radius = 25.0
-height = 62.0
+radius = 39.0
+height = 114.0
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_sweqy")
@@ -114,4 +114,5 @@ sprite_frames = SubResource("SpriteFrames_dw050")
 animation = &"up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_b26j0")
