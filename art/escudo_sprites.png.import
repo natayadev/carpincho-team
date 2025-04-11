@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s1d6ibbsi5ow"
-path="res://.godot/imported/icon-team.png-6ac5adc014237aa23b439f662fb9409a.ctex"
+uid="uid://tig25k3ahunc"
+path="res://.godot/imported/escudo_sprites.png-7d85fb6141a4b2f34b68e5b02c30d6b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon-team.png"
-dest_files=["res://.godot/imported/icon-team.png-6ac5adc014237aa23b439f662fb9409a.ctex"]
+source_file="res://art/escudo_sprites.png"
+dest_files=["res://.godot/imported/escudo_sprites.png-7d85fb6141a4b2f34b68e5b02c30d6b4.ctex"]
 
 [params]
 

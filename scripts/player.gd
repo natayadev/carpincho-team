@@ -6,6 +6,7 @@ var screen_size # Size of the game window.
 
 func _ready():
 	screen_size = get_viewport_rect().size
+	$ShieldSprite.play()
 	#hide()
 
 
@@ -31,6 +32,11 @@ func _process(_delta):
 		
 	if (Input.is_action_just_pressed("attack") and $AttackDelay.is_stopped()):
 		AtacarEnemigo()
+	
+	if (Input.is_action_pressed("shield")):
+		Escudarse()
+	else:
+		$ShieldSprite.hide()
 		
 func _physics_process(_delta: float) -> void:
 	
@@ -51,10 +57,15 @@ func _on_body_entered(_body: Node2D) -> void:
 	
 	# Must be deferred as we can't change physics properties on a physics callback.
 	$CollisionShape2D.set_deferred("disabled", true)
+	
+func Escudarse() -> void:
+		$ShieldSprite.show()
+	
 
 func AtacarEnemigo() -> void:
 	if($AttackHitbox.has_overlapping_areas()):
 		var EnemigosEnArea = $AttackHitbox.get_overlapping_areas()
 		for enemigo in EnemigosEnArea:
 			print_debug("Ataco enemigo " + str(enemigo))
+			enemigo.queue_free()
 	pass

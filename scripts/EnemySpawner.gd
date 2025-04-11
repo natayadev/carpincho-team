@@ -23,16 +23,21 @@ func Spawn_(RutaAEscenaDelEnemigo: String):
 func CalcularPosicionDeSpawn_(enemigo) -> void:
 	enemigo.position.x = randi_range(OFFSET, TamañoDeLaVentana.x - OFFSET)
 	enemigo.position.y = randi_range(OFFSET, TamañoDeLaVentana.y - OFFSET)
+	#ChequearPosicion_(enemigo)
 
-func ChequearPosicion_(enemigo) -> bool:
-	var margenes : Vector2 = player.position
-	#var horizontal = range(margenes.x - OFFSET, margenes.x + OFFSET)
-	#var vertical = range(margenes.y - OFFSET, margenes.y + OFFSET)
-	#var margenes : Vector2 = player.position
-	if(enemigo.position.x >= margenes.x - OFFSET || enemigo.position.y <= margenes.x + OFFSET):
-		return false
-	else:
-		return true
+#TODO: Corregir que los enemigos spawneen sobre el personaje
+func ChequearPosicion_(enemigo) -> void:
+	var playerSafeZone = player.get_node("SafeZone")
+	var NoDeseados = playerSafeZone.get_overlapping_bodies()
+	if enemigo in NoDeseados:
+		CalcularPosicionDeSpawn_(enemigo)
+		print_debug("Recalculando posicion de spawn. SUPERPOSICION")
+	else: return
+	
+	#if(enemigo.position.x >= margenes.x - OFFSET || enemigo.position.y <= margenes.x + OFFSET):
+		#return false
+	#else:
+		#return true
 	
 func _on_spawn_timer_timeout() -> void:
 	for x in randi_range(1, 5):

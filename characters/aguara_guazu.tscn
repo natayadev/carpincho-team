@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://dy7qhrt7is6ay"]
 
-[ext_resource type="Script" uid="uid://ca7oiu6gut43l" path="res://characters/aguara_guazu.gd" id="1_haph4"]
+[ext_resource type="Script" uid="uid://ca7oiu6gut43l" path="res://scripts/aguara_guazu.gd" id="1_haph4"]
 [ext_resource type="Texture2D" uid="uid://brf5as255tt1l" path="res://art/attack_128px.png" id="1_stncn"]
 [ext_resource type="Texture2D" uid="uid://bpikflsbjlncq" path="res://art/running_128px.png" id="2_haph4"]
 [ext_resource type="Texture2D" uid="uid://duw8lixgueb14" path="res://art/idle_128px.png" id="3_ce7ub"]
@@ -57,6 +57,8 @@ stream_6/stream = ExtResource("10_uqv6x")
 stream_7/stream = ExtResource("11_p52tj")
 
 [node name="AguaraGuazu" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+monitoring = false
 script = ExtResource("1_haph4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s1d6ibbsi5ow"
-path="res://.godot/imported/icon-team.png-6ac5adc014237aa23b439f662fb9409a.ctex"
+uid="uid://dr5r1wgkhnxts"
+path="res://.godot/imported/carpi_sprites.png-cd001c415016b290cdace5e8be9b2757.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon-team.png"
-dest_files=["res://.godot/imported/icon-team.png-6ac5adc014237aa23b439f662fb9409a.ctex"]
+source_file="res://art/carpi_sprites.png"
+dest_files=["res://.godot/imported/carpi_sprites.png-cd001c415016b290cdace5e8be9b2757.ctex"]
 
 [params]
 

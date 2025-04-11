@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr5r1wgkhnxts"
-path="res://.godot/imported/Capybara-walk_right.png-4749c318a0ca864daa7b48c701d72bf3.ctex"
+uid="uid://ctqv7hwat6mo1"
+path="res://.godot/imported/yarara_sprites_v2.png-a58572c5fe197b19f9166bff12fbdc8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Capybara-walk_right.png"
-dest_files=["res://.godot/imported/Capybara-walk_right.png-4749c318a0ca864daa7b48c701d72bf3.ctex"]
+source_file="res://art/yarara_sprites_v2.png"
+dest_files=["res://.godot/imported/yarara_sprites_v2.png-a58572c5fe197b19f9166bff12fbdc8f.ctex"]
 
 [params]
 

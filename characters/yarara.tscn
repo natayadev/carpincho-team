@@ -1,16 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3u8fvb5l1vtu"]
+[gd_scene load_steps=8 format=3 uid="uid://b3u8fvb5l1vtu"]
 
 [ext_resource type="Script" uid="uid://m0jfsa04cdjk" path="res://scripts/yarara.gd" id="1_6rnue"]
-[ext_resource type="Texture2D" uid="uid://27cfbmdl7pd3" path="res://art/placeholder_yarara.png" id="2_qf31r"]
+[ext_resource type="Texture2D" uid="uid://cc2cqdmnl7xmv" path="res://art/yarara_sprites.png" id="2_mcpwl"]
 [ext_resource type="AudioStream" uid="uid://ewihbf7drxmu" path="res://art/sfx/drum_snare.wav" id="3_mcpwl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqgu8"]
+atlas = ExtResource("2_mcpwl")
+region = Rect2(354, 0, 354, 519)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxy0u"]
+atlas = ExtResource("2_mcpwl")
+region = Rect2(0, 0, 354, 519)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_km6ti"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_qf31r")
+"texture": SubResource("AtlasTexture_aqgu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxy0u")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }]
@@ -20,7 +31,8 @@ radius = 120.0
 height = 240.0
 
 [node name="Yarara" type="Area2D"]
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2, 0.2)
+monitoring = false
 script = ExtResource("1_6rnue")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -7,11 +7,6 @@ func _ready() -> void:
 	$AnimatedSprite2D.play()
 	ActualizarPosicionBala()
 	print("lanze bola de veneno")
-	return
-	
-func _process(_delta: float) -> void:
-	pass
-	
 	
 	
 func ActualizarPosicionBala() -> void:
@@ -19,8 +14,8 @@ func ActualizarPosicionBala() -> void:
 	impulso.x = (get_parent().position.x - player.position.x) * -1
 	impulso.y = (get_parent().position.y - player.position.y) * -1
 	apply_central_impulse(impulso.normalized() * VelocidadBala)
+	reparent(get_parent().get_parent())
 	#apply_central_impulse(Vector2(0, 0))
-	return
 	
 func Destruir() -> void:
 	queue_free()

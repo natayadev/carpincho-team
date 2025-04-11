@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s1d6ibbsi5ow"
-path="res://.godot/imported/icon-team.png-6ac5adc014237aa23b439f662fb9409a.ctex"
+uid="uid://bojjlsrjsrwoh"
+path="res://.godot/imported/yarara_sprites_v4.png-eb3df83345349d13f704dbc05792134d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon-team.png"
-dest_files=["res://.godot/imported/icon-team.png-6ac5adc014237aa23b439f662fb9409a.ctex"]
+source_file="res://art/yarara_sprites_v4.png"
+dest_files=["res://.godot/imported/yarara_sprites_v4.png-eb3df83345349d13f704dbc05792134d.ctex"]
 
 [params]
 
