@@ -21,8 +21,10 @@ func _on_player_stamina_changed(stamina):
 	$HUD.update_stamina(int(stamina), $Player.max_stamina)
 	
 func _ready():
-	var custom_cursor = preload("res://art/Cursor.png")
-	Input.set_custom_mouse_cursor(custom_cursor, Input.CURSOR_POINTING_HAND)
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	var custom_cursor = load("res://art/Cursor.png")
+	Input.set_custom_mouse_cursor(custom_cursor, Input.CURSOR_ARROW)
+
 	$HUD/HealthBar.hide()
 	$HUD/StaminaBar.hide()
 	$GameMusic.play()

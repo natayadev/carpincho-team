@@ -74,8 +74,9 @@ offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.4, 0.4)
+toggle_mode = true
 texture_normal = ExtResource("5_gpiub")
-texture_disabled = ExtResource("6_amv7k")
+texture_pressed = ExtResource("6_amv7k")
 
 [node name="ExitButton" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(200, 100)
