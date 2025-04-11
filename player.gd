@@ -85,3 +85,11 @@ func _on_blue_area_body_entered(body):
 func _on_blue_area_body_exited(body):
 	if body == self:
 		touching_blue = false
+
+
+func _on_health_changed(health: Variant) -> void:
+	pass # Replace with function body.
+
+
+func _on_stamina_changed(stamina: Variant) -> void:
+	pass # Replace with function body.

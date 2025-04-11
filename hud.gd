@@ -24,3 +24,7 @@ func _on_start_button_pressed():
 
 func _on_message_timer_timeout():
 	$Message.hide()
+
+
+func _on_player_health_changed(health: Variant) -> void:
+	pass # Replace with function body.
