@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://db73mp2au66sl" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://d1f7eabgfc3gq" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://c6bqruikxwql0" path="res://hud.tscn" id="4_1bvp3"]
-[ext_resource type="AudioStream" uid="uid://dt6ajmlsq5f8q" path="res://sounds/game.ogg" id="4_lquwl"]
+[ext_resource type="AudioStream" uid="uid://besqcc2os8w7l" path="res://sounds/game.ogg" id="4_lquwl"]
 [ext_resource type="AudioStream" uid="uid://bpnmwfbnbfiw0" path="res://sounds/gameover.wav" id="5_7mycd"]
 
 [sub_resource type="GDScript" id="GDScript_h2yge"]
@@ -49,6 +49,7 @@ debug_color = Color(0, 0.552941, 0.905882, 0.505882)
 
 [node name="GameMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_lquwl")
+parameters/looping = true
 
 [node name="GameOverMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_7mycd")
