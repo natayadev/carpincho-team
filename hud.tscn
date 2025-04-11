@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dcjsxl344hamy" path="res://art/HealthBar.png" id="11_1fv7p"]
 [ext_resource type="Texture2D" uid="uid://jcuir4flwyq5" path="res://art/EmptyBar.png" id="11_4u2vk"]
 [ext_resource type="Texture2D" uid="uid://beo885iryto3w" path="res://art/StaminaBar.png" id="12_4u2vk"]
-[ext_resource type="Texture2D" uid="uid://k4u4w0760qx" path="res://art/Creditos.png" id="15_2d608"]
+[ext_resource type="Texture2D" uid="uid://bsfbfkh53epkn" path="res://art/Creditos.png" id="15_2d608"]
 
 [sub_resource type="GDScript" id="GDScript_1fv7p"]
 script/source = "extends TextureProgressBar
