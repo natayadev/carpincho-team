@@ -5,6 +5,12 @@ var is_muted := false
 
 func show_game_over():
 	$StartButton.show()
+	$ExitButton.show()
+	$MuteButton.show()
+	$Title.show()
+	$HealthBar.hide()
+	$StaminaBar.hide()
+	$Background.show()
 
 func _on_start_button_pressed():
 	$StartButton.hide()
