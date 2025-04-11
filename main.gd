@@ -28,6 +28,7 @@ func _ready():
 
 	$HUD/HealthBar.hide()
 	$HUD/StaminaBar.hide()
+	$HUD/Creditos.hide()
 	$GameMusic.play()
 	
 	$HUD.update_health($Player.health, $Player.max_health)

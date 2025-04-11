@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c6bqruikxwql0"]
+[gd_scene load_steps=17 format=3 uid="uid://c6bqruikxwql0"]
 
 [ext_resource type="Script" uid="uid://82j0yydw80ie" path="res://hud.gd" id="1_64ctp"]
 [ext_resource type="Texture2D" uid="uid://c6oui5kfsxli0" path="res://art/Background.png" id="2_gpiub"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dcjsxl344hamy" path="res://art/HealthBar.png" id="11_1fv7p"]
 [ext_resource type="Texture2D" uid="uid://jcuir4flwyq5" path="res://art/EmptyBar.png" id="11_4u2vk"]
 [ext_resource type="Texture2D" uid="uid://beo885iryto3w" path="res://art/StaminaBar.png" id="12_4u2vk"]
+[ext_resource type="Texture2D" uid="uid://k4u4w0760qx" path="res://art/Creditos.png" id="15_2d608"]
 
 [sub_resource type="GDScript" id="GDScript_1fv7p"]
 script/source = "extends TextureProgressBar
@@ -95,6 +96,7 @@ offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.4, 0.4)
+toggle_mode = true
 texture_normal = ExtResource("8_4q17s")
 texture_pressed = ExtResource("9_2d608")
 texture_hover = ExtResource("9_2d608")
@@ -159,6 +161,21 @@ offset_bottom = 163.0
 scale = Vector2(3, 3)
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Creditos" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 66.0
+offset_top = -312.0
+offset_right = 766.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("15_2d608")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MuteButton" to="." method="_on_mute_button_pressed"]

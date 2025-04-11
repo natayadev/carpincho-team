@@ -12,6 +12,7 @@ func show_game_over():
 	$HealthBar.hide()
 	$StaminaBar.hide()
 	$Background.show()
+	$Creditos.hide()
 
 func _on_start_button_pressed():
 	$StartButton.hide()
@@ -20,6 +21,7 @@ func _on_start_button_pressed():
 	$CreditsButton.hide()
 	$Background.hide()
 	$Title.hide()
+	$Creditos.hide()
 	$HealthBar.show()
 	$StaminaBar.show()	
 	start_game.emit()
@@ -41,4 +43,5 @@ func update_stamina(current: int, max: int) -> void:
 	$StaminaBar/StaminaLabel.text = "%d / %d" % [current, max]
 
 func _on_credits_button_pressed() -> void:
-	pass # Replace with function body.
+	$Title.hide()
+	$Creditos.show()
