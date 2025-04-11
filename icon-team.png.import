@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://day1u38s1lsm6"
-path="res://.godot/imported/aguara guazu.png-ab3bd11f8aa6b7271929c6e0164b3dc4.ctex"
+uid="uid://6ggkhk46clpq"
+path="res://.godot/imported/icon-team.png-6ac5adc014237aa23b439f662fb9409a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/aguara guazu.png"
-dest_files=["res://.godot/imported/aguara guazu.png-ab3bd11f8aa6b7271929c6e0164b3dc4.ctex"]
+source_file="res://icon-team.png"
+dest_files=["res://.godot/imported/icon-team.png-6ac5adc014237aa23b439f662fb9409a.ctex"]
 
 [params]
 

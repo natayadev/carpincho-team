@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6jt4nsfehtow"
-path="res://.godot/imported/bolita.png-7cba52ad8a73c508b30647d7204c991f.ctex"
+uid="uid://bpikflsbjlncq"
+path="res://.godot/imported/running_128px.png-4065b306695110c67796dc93c9f0d0f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/bolita.png"
-dest_files=["res://.godot/imported/bolita.png-7cba52ad8a73c508b30647d7204c991f.ctex"]
+source_file="res://art/running_128px.png"
+dest_files=["res://.godot/imported/running_128px.png-4065b306695110c67796dc93c9f0d0f2.ctex"]
 
 [params]
 

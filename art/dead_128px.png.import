@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://27cfbmdl7pd3"
-path="res://.godot/imported/placeholder_serpiente.png-04876db92a805d7fe9afb5f53be4d72f.ctex"
+uid="uid://djbsrkaetck8a"
+path="res://.godot/imported/dead_128px.png-95e0c0afbfaae8d89c591554d1ccf0ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/placeholder_serpiente.png"
-dest_files=["res://.godot/imported/placeholder_serpiente.png-04876db92a805d7fe9afb5f53be4d72f.ctex"]
+source_file="res://art/dead_128px.png"
+dest_files=["res://.godot/imported/dead_128px.png-95e0c0afbfaae8d89c591554d1ccf0ff.ctex"]
 
 [params]
 

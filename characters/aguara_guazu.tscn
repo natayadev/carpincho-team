@@ -1,0 +1,72 @@
+[gd_scene load_steps=16 format=3 uid="uid://dy7qhrt7is6ay"]
+
+[ext_resource type="Script" uid="uid://ca7oiu6gut43l" path="res://characters/aguara_guazu.gd" id="1_haph4"]
+[ext_resource type="Texture2D" uid="uid://brf5as255tt1l" path="res://art/attack_128px.png" id="1_stncn"]
+[ext_resource type="Texture2D" uid="uid://bpikflsbjlncq" path="res://art/running_128px.png" id="2_haph4"]
+[ext_resource type="Texture2D" uid="uid://duw8lixgueb14" path="res://art/idle_128px.png" id="3_ce7ub"]
+[ext_resource type="AudioStream" uid="uid://cgs73b5rttu4u" path="res://art/sfx/perrro_corriendo/0.ogg" id="4_stncn"]
+[ext_resource type="AudioStream" uid="uid://dxjh337rhj7v0" path="res://art/sfx/perrro_corriendo/1.ogg" id="5_haph4"]
+[ext_resource type="AudioStream" uid="uid://b5lgbef58o62" path="res://art/sfx/perrro_corriendo/2.ogg" id="6_ce7ub"]
+[ext_resource type="AudioStream" uid="uid://pkiams3l0jq4" path="res://art/sfx/perrro_corriendo/3.ogg" id="7_tgtx8"]
+[ext_resource type="AudioStream" uid="uid://ciuvnd2dg308l" path="res://art/sfx/perrro_corriendo/4.ogg" id="8_had47"]
+[ext_resource type="AudioStream" uid="uid://deo4re7a16mao" path="res://art/sfx/perrro_corriendo/5.ogg" id="9_8l46s"]
+[ext_resource type="AudioStream" uid="uid://y3u2u8jqfv6k" path="res://art/sfx/perrro_corriendo/6.ogg" id="10_uqv6x"]
+[ext_resource type="AudioStream" uid="uid://dnq51c4ued6rb" path="res://art/sfx/perrro_corriendo/7.ogg" id="11_p52tj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t5yjg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_stncn")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_haph4")
+}],
+"loop": true,
+"name": &"running",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ce7ub")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7h23x"]
+radius = 64.0
+height = 140.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7rkey"]
+playback_mode = 1
+streams_count = 8
+stream_0/stream = ExtResource("4_stncn")
+stream_1/stream = ExtResource("5_haph4")
+stream_2/stream = ExtResource("6_ce7ub")
+stream_3/stream = ExtResource("7_tgtx8")
+stream_4/stream = ExtResource("8_had47")
+stream_5/stream = ExtResource("9_8l46s")
+stream_6/stream = ExtResource("10_uqv6x")
+stream_7/stream = ExtResource("11_p52tj")
+
+[node name="AguaraGuazu" type="Area2D"]
+script = ExtResource("1_haph4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9.53674e-07, 0)
+sprite_frames = SubResource("SpriteFrames_t5yjg")
+animation = &"walking"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_7h23x")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_7rkey")
+volume_db = -10.0

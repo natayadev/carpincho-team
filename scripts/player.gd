@@ -1,35 +1,23 @@
-extends Area2D
+extends CharacterBody2D
 signal hit
 
-@export var speed = 200 # How fast the player will move (pixels/sec).
+const SPEED = 200 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
 
 func _ready():
 	screen_size = get_viewport_rect().size
-	hide()
+	#hide()
 
 
-func _process(delta):
-	var velocity = Vector2.ZERO # The player's movement vector.
-	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("move_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("move_down"):
-		velocity.y += 1
-	if Input.is_action_pressed("move_up"):
-		velocity.y -= 1
-
+func _process(_delta):
 	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
 		$AnimatedSprite2D.play()
 		if ($AudioStreamPlayer2D.has_stream_playback() == false):
 			$AudioStreamPlayer2D.play()
 	else:
 		$AnimatedSprite2D.stop()
-		
 	
-	position += velocity * delta
+	#position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
 
 	if velocity.x != 0:
@@ -40,15 +28,23 @@ func _process(delta):
 	elif velocity.y != 0:
 		$AnimatedSprite2D.animation = "up"
 		$AnimatedSprite2D.flip_v = false
+		
+func _physics_process(_delta: float) -> void:
+	
+	var movimientoHorizontal := Input.get_axis("move_left", "move_right")
+	var movimientoVertical := Input.get_axis("move_up", "move_down")
+	if movimientoHorizontal || movimientoVertical:
+		velocity.x = movimientoHorizontal * SPEED
+		velocity.y = movimientoVertical * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.y = move_toward(velocity.y, 0, SPEED)
 
+	move_and_slide()
 
 func _on_body_entered(_body: Node2D) -> void:
-	hide() # Player disappears after being hit.
-	hit.emit()
+	hide() # El jugador desaparece despues de ser golpeado
+	hit.emit() #Emite la señal de que fue herido
+	
 	# Must be deferred as we can't change physics properties on a physics callback.
 	$CollisionShape2D.set_deferred("disabled", true)
-
-func start(pos):
-	position = pos
-	show()
-	$CollisionShape2D.disabled = false

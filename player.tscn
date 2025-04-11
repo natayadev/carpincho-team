@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://d1f7eabgfc3gq"]
 
-[ext_resource type="Script" uid="uid://crsa0bbhlxwqj" path="res://player.gd" id="1_sweqy"]
+[ext_resource type="Script" uid="uid://crsa0bbhlxwqj" path="res://scripts/player.gd" id="1_sweqy"]
 [ext_resource type="Texture2D" uid="uid://dr5r1wgkhnxts" path="res://art/Capybara-walk_right.png" id="3_hqtel"]
 [ext_resource type="AudioStream" uid="uid://b8swmsyq5de1y" path="res://art/sfx/pasos/stepdirt_1.wav" id="3_n7ghd"]
 [ext_resource type="AudioStream" uid="uid://dt4dvjw6xlxbw" path="res://art/sfx/pasos/stepdirt_2.wav" id="4_nvl01"]
@@ -82,7 +82,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"up",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -105,12 +105,12 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 20.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b26j0"]
-radius = 25.0
-height = 62.0
+radius = 17.0
+height = 34.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_n7ghd"]
 streams_count = 8
@@ -123,12 +123,12 @@ stream_5/stream = ExtResource("8_606se")
 stream_6/stream = ExtResource("9_u1c27")
 stream_7/stream = ExtResource("10_op7ga")
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_sweqy")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_dw050")
 animation = &"up"
 
@@ -136,9 +136,7 @@ animation = &"up"
 shape = SubResource("CapsuleShape2D_b26j0")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
-current = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_n7ghd")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+pitch_scale = 2.5

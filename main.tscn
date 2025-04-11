@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://cuphtspclqawb"]
 
-[ext_resource type="Script" uid="uid://db73mp2au66sl" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://db73mp2au66sl" path="res://scripts/main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://d1f7eabgfc3gq" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://c6bqruikxwql0" path="res://hud.tscn" id="4_1bvp3"]
 [ext_resource type="AudioStream" uid="uid://dt6ajmlsq5f8q" path="res://art/music/House In a Forest Loop.ogg" id="4_lquwl"]
-[ext_resource type="PackedScene" uid="uid://b3u8fvb5l1vtu" path="res://serpiente.tscn" id="6_7mycd"]
 [ext_resource type="Texture2D" uid="uid://v5ia5f54nrwb" path="res://assets/Tilemap/tilemap.png" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://c71r30tkks3j3" path="res://EnemySpawner.tscn" id="7_272bh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]
 texture = ExtResource("6_272bh")
@@ -31,9 +31,6 @@ texture_region_size = Vector2i(18, 18)
 17:0/0 = 0
 18:0/0 = 0
 19:0/0 = 0
-20:0/0 = 0
-21:0/0 = 0
-22:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
@@ -54,9 +51,6 @@ texture_region_size = Vector2i(18, 18)
 17:1/0 = 0
 18:1/0 = 0
 19:1/0 = 0
-20:1/0 = 0
-21:1/0 = 0
-22:1/0 = 0
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
@@ -77,9 +71,6 @@ texture_region_size = Vector2i(18, 18)
 17:2/0 = 0
 18:2/0 = 0
 19:2/0 = 0
-20:2/0 = 0
-21:2/0 = 0
-22:2/0 = 0
 0:3/0 = 0
 1:3/0 = 0
 2:3/0 = 0
@@ -99,9 +90,6 @@ texture_region_size = Vector2i(18, 18)
 16:3/0 = 0
 17:3/0 = 0
 18:3/0 = 0
-20:3/0 = 0
-21:3/0 = 0
-22:3/0 = 0
 0:4/0 = 0
 1:4/0 = 0
 2:4/0 = 0
@@ -122,9 +110,6 @@ texture_region_size = Vector2i(18, 18)
 17:4/0 = 0
 18:4/0 = 0
 19:4/0 = 0
-20:4/0 = 0
-21:4/0 = 0
-22:4/0 = 0
 0:5/0 = 0
 1:5/0 = 0
 2:5/0 = 0
@@ -145,9 +130,6 @@ texture_region_size = Vector2i(18, 18)
 17:5/0 = 0
 18:5/0 = 0
 19:5/0 = 0
-20:5/0 = 0
-21:5/0 = 0
-22:5/0 = 0
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0
@@ -168,9 +150,6 @@ texture_region_size = Vector2i(18, 18)
 17:6/0 = 0
 18:6/0 = 0
 19:6/0 = 0
-20:6/0 = 0
-21:6/0 = 0
-22:6/0 = 0
 0:7/0 = 0
 1:7/0 = 0
 2:7/0 = 0
@@ -191,9 +170,6 @@ texture_region_size = Vector2i(18, 18)
 17:7/0 = 0
 18:7/0 = 0
 19:7/0 = 0
-20:7/0 = 0
-21:7/0 = 0
-22:7/0 = 0
 0:8/0 = 0
 1:8/0 = 0
 2:8/0 = 0
@@ -214,32 +190,6 @@ texture_region_size = Vector2i(18, 18)
 17:8/0 = 0
 18:8/0 = 0
 19:8/0 = 0
-20:8/0 = 0
-21:8/0 = 0
-22:8/0 = 0
-0:9/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-5:9/0 = 0
-6:9/0 = 0
-7:9/0 = 0
-8:9/0 = 0
-9:9/0 = 0
-10:9/0 = 0
-11:9/0 = 0
-12:9/0 = 0
-13:9/0 = 0
-14:9/0 = 0
-15:9/0 = 0
-16:9/0 = 0
-17:9/0 = 0
-18:9/0 = 0
-19:9/0 = 0
-20:9/0 = 0
-21:9/0 = 0
-22:9/0 = 0
 19:3/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_lquwl"]
@@ -260,7 +210,7 @@ color = Color(0.146527, 0.308525, 0.373937, 1)
 tile_set = SubResource("TileSet_lquwl")
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(1, 1)
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
@@ -275,11 +225,9 @@ position = Vector2(240, 450)
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_lquwl")
-volume_db = -32.655
+volume_db = -20.0
 
-[node name="Serpiente" parent="." instance=ExtResource("6_7mycd")]
-position = Vector2(979, 139)
-scale = Vector2(0.3, 0.3)
+[node name="EnemySpawner" parent="." instance=ExtResource("7_272bh")]
 
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]

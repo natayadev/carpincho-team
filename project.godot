@@ -13,7 +13,10 @@ config_version=5
 config/name="carpincho"
 run/main_scene="uid://cuphtspclqawb"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(1, 0.709804, 0.517647, 1)
+boot_splash/image="uid://6ggkhk46clpq"
+config/icon="uid://6ggkhk46clpq"
+boot_splash/minimum_display_time=1000
 
 [editor]
 
