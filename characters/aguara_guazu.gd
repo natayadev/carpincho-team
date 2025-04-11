@@ -15,8 +15,9 @@ func SeguirJugador() -> void:
 	self.position -= diferenciaDePosicion.normalized() * Velocidad
 	if ($AudioStreamPlayer2D.has_stream_playback() == false):
 			$AudioStreamPlayer2D.play()
-	pass
+	
 	
 func AtacarJugador() -> void:
+	#Codigo para atacar el personaje
 	pass
 	

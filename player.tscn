@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://d1f7eabgfc3gq"]
+[gd_scene load_steps=27 format=3 uid="uid://d1f7eabgfc3gq"]
 
 [ext_resource type="Script" uid="uid://crsa0bbhlxwqj" path="res://scripts/player.gd" id="1_sweqy"]
 [ext_resource type="Texture2D" uid="uid://dr5r1wgkhnxts" path="res://art/Capybara-walk_right.png" id="3_hqtel"]
@@ -109,8 +109,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b26j0"]
-radius = 17.0
-height = 34.0
+radius = 18.0
+height = 36.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_n7ghd"]
 streams_count = 8
@@ -123,6 +123,9 @@ stream_5/stream = ExtResource("8_606se")
 stream_6/stream = ExtResource("9_u1c27")
 stream_7/stream = ExtResource("10_op7ga")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_n7ghd"]
+radius = 36.0
+
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_sweqy")
@@ -132,7 +135,7 @@ metadata/_edit_group_ = true
 sprite_frames = SubResource("SpriteFrames_dw050")
 animation = &"up"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_b26j0")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
@@ -140,3 +143,11 @@ shape = SubResource("CapsuleShape2D_b26j0")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_n7ghd")
 pitch_scale = 2.5
+
+[node name="AttackDelay" type="Timer" parent="."]
+wait_time = 0.7
+
+[node name="AttackHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
+shape = SubResource("CircleShape2D_n7ghd")

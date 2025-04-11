@@ -26,8 +26,8 @@ func CalcularPosicionDeSpawn_(enemigo) -> void:
 
 func ChequearPosicion_(enemigo) -> bool:
 	var margenes : Vector2 = player.position
-	var horizontal = range(margenes.x - OFFSET, margenes.x + OFFSET)
-	var vertical = range(margenes.y - OFFSET, margenes.y + OFFSET)
+	#var horizontal = range(margenes.x - OFFSET, margenes.x + OFFSET)
+	#var vertical = range(margenes.y - OFFSET, margenes.y + OFFSET)
 	#var margenes : Vector2 = player.position
 	if(enemigo.position.x >= margenes.x - OFFSET || enemigo.position.y <= margenes.x + OFFSET):
 		return false
@@ -37,4 +37,3 @@ func ChequearPosicion_(enemigo) -> bool:
 func _on_spawn_timer_timeout() -> void:
 	for x in randi_range(1, 5):
 		Spawn_(ArrayDeEnemigos.pick_random())
-	

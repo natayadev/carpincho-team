@@ -64,7 +64,7 @@ position = Vector2(-9.53674e-07, 0)
 sprite_frames = SubResource("SpriteFrames_t5yjg")
 animation = &"walking"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_7h23x")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

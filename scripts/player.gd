@@ -29,6 +29,9 @@ func _process(_delta):
 		$AnimatedSprite2D.animation = "up"
 		$AnimatedSprite2D.flip_v = false
 		
+	if (Input.is_action_just_pressed("attack") and $AttackDelay.is_stopped()):
+		AtacarEnemigo()
+		
 func _physics_process(_delta: float) -> void:
 	
 	var movimientoHorizontal := Input.get_axis("move_left", "move_right")
@@ -48,3 +51,10 @@ func _on_body_entered(_body: Node2D) -> void:
 	
 	# Must be deferred as we can't change physics properties on a physics callback.
 	$CollisionShape2D.set_deferred("disabled", true)
+
+func AtacarEnemigo() -> void:
+	if($AttackHitbox.has_overlapping_areas()):
+		var EnemigosEnArea = $AttackHitbox.get_overlapping_areas()
+		for enemigo in EnemigosEnArea:
+			print_debug("Ataco enemigo " + str(enemigo))
+	pass

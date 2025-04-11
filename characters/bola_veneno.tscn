@@ -45,6 +45,7 @@ radius = 15.0
 height = 32.0
 
 [node name="Bola_veneno" type="RigidBody2D"]
+collision_layer = 2
 gravity_scale = 0.0
 script = ExtResource("1_wurf5")
 
