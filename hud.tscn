@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c6bqruikxwql0"]
+[gd_scene load_steps=16 format=3 uid="uid://c6bqruikxwql0"]
 
 [ext_resource type="Script" uid="uid://82j0yydw80ie" path="res://hud.gd" id="1_64ctp"]
 [ext_resource type="Texture2D" uid="uid://c6oui5kfsxli0" path="res://art/Background.png" id="2_gpiub"]
@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cwtn0udnu4f1w" path="res://art/Mute.png" id="5_gpiub"]
 [ext_resource type="Texture2D" uid="uid://c1fioil3v43f7" path="res://art/MutePressed.png" id="6_amv7k"]
 [ext_resource type="Texture2D" uid="uid://dqhvkvswycka" path="res://art/Exit.png" id="7_1fv7p"]
+[ext_resource type="Texture2D" uid="uid://c2tn5a5kvvgdd" path="res://art/Credits.png" id="8_4q17s"]
 [ext_resource type="Texture2D" uid="uid://dgvm7c6mvd8xs" path="res://art/ExitPressed.png" id="8_4u2vk"]
+[ext_resource type="Texture2D" uid="uid://c86evvua1m1qu" path="res://art/CreditsPressed.png" id="9_2d608"]
 [ext_resource type="Texture2D" uid="uid://v1q5fbmajo5a" path="res://art/Title.png" id="10_amv7k"]
 [ext_resource type="Texture2D" uid="uid://dcjsxl344hamy" path="res://art/HealthBar.png" id="11_1fv7p"]
 [ext_resource type="Texture2D" uid="uid://jcuir4flwyq5" path="res://art/EmptyBar.png" id="11_4u2vk"]
@@ -49,10 +51,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -515.0
-offset_top = -306.0
-offset_right = 278.0
-offset_bottom = -100.0
+offset_left = -526.0
+offset_top = -385.0
+offset_right = 267.0
+offset_bottom = -179.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.4, 0.4)
@@ -67,16 +69,35 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -515.0
-offset_top = -208.0
-offset_right = 278.0
-offset_bottom = -2.0
+offset_left = -526.0
+offset_top = -292.0
+offset_right = 267.0
+offset_bottom = -86.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.4, 0.4)
 toggle_mode = true
 texture_normal = ExtResource("5_gpiub")
 texture_pressed = ExtResource("6_amv7k")
+texture_hover = ExtResource("6_amv7k")
+
+[node name="CreditsButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(200, 100)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -526.0
+offset_top = -200.0
+offset_right = 267.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("8_4q17s")
+texture_pressed = ExtResource("9_2d608")
+texture_hover = ExtResource("9_2d608")
 
 [node name="ExitButton" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(200, 100)
@@ -85,9 +106,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -514.0
+offset_left = -526.0
 offset_top = -109.0
-offset_right = 279.0
+offset_right = 267.0
 offset_bottom = 97.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -141,4 +162,5 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MuteButton" to="." method="_on_mute_button_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

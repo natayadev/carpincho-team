@@ -6,6 +6,7 @@ var is_muted := false
 func show_game_over():
 	$StartButton.show()
 	$ExitButton.show()
+	$CreditsButton.show()
 	$MuteButton.show()
 	$Title.show()
 	$HealthBar.hide()
@@ -16,6 +17,7 @@ func _on_start_button_pressed():
 	$StartButton.hide()
 	$ExitButton.hide()
 	$MuteButton.hide()
+	$CreditsButton.hide()
 	$Background.hide()
 	$Title.hide()
 	$HealthBar.show()
@@ -37,3 +39,6 @@ func update_health(current: int, max: int) -> void:
 func update_stamina(current: int, max: int) -> void:
 	$StaminaBar.value = current
 	$StaminaBar/StaminaLabel.text = "%d / %d" % [current, max]
+
+func _on_credits_button_pressed() -> void:
+	pass # Replace with function body.
