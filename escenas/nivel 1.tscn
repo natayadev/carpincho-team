@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cgtvnn0dc7o5"]
+[gd_scene load_steps=44 format=3 uid="uid://cgtvnn0dc7o5"]
 
 [ext_resource type="PackedScene" uid="uid://bjmr26ku2c7y6" path="res://escenas/personaje/personaje.tscn" id="1_p1ihv"]
 [ext_resource type="Script" uid="uid://gj41wu8trr63" path="res://escenas/gamemanager.gd" id="1_r0eip"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dvca8hiqrseti" path="res://assets/tileBuilding_roofRed.png" id="18_c7py2"]
 [ext_resource type="Texture2D" uid="uid://bqw86j11wy3q0" path="res://assets/tileBuilding_roofRedPoint.png" id="19_ieeko"]
 [ext_resource type="Texture2D" uid="uid://yjtpf8mmbs41" path="res://assets/foliageTree_green.png" id="19_jalob"]
+[ext_resource type="PackedScene" uid="uid://c71r30tkks3j3" path="res://escenas/EnemySpawner.tscn" id="23_drq7u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xpcve"]
 texture = ExtResource("6_3x577")
@@ -3287,6 +3288,8 @@ layer_1/tile_data = PackedInt32Array(589840, 65557, 5, -393189, 65537, 1, -39318
 layer_2/name = "Layer2"
 layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(-65510, 14, 4, 26, 14, 5, -65509, 65550, 4, 27, 65550, 5, -65508, 131086, 4, 28, 131086, 5, -65507, 196622, 4, 29, 196622, 5, 65563, 65553, 4, 131099, 65553, 5, 65564, 131089, 4, 131100, 131089, 5, 65567, 65549, 4, 131103, 65549, 5, 65568, 131085, 4, 131104, 131085, 5, 65559, 65549, 4, 131095, 65549, 5, 65560, 131085, 4, 131096, 131085, 5)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("23_drq7u")]
 
 [connection signal="puerta_llave" from="llave" to="jaula" method="_on_llave_puerta_llave"]
 [connection signal="puerta_llave" from="llave2" to="jaula" method="_on_llave_puerta_llave"]

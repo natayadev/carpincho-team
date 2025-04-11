@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3u8fvb5l1vtu"]
+
+[ext_resource type="Script" uid="uid://duetkt1ne1jmd" path="res://escenas/enemigo/yarara.gd" id="1_6rnue"]
+[ext_resource type="Texture2D" uid="uid://sfhh7howb7o7" path="res://assets/sprites/yarara_sprites.png" id="2_mcpwl"]
+[ext_resource type="AudioStream" uid="uid://gewgvwg3dllf" path="res://sounds/drum_snare.wav" id="3_mcpwl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqgu8"]
+atlas = ExtResource("2_mcpwl")
+region = Rect2(354, 0, 354, 519)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxy0u"]
+atlas = ExtResource("2_mcpwl")
+region = Rect2(0, 0, 354, 519)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_km6ti"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqgu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxy0u")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qf31r"]
+radius = 120.0
+height = 240.0
+
+[node name="Yarara" type="Area2D"]
+scale = Vector2(0.2, 0.2)
+monitoring = false
+script = ExtResource("1_6rnue")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_km6ti")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_qf31r")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_mcpwl")
+volume_db = -10.0
+pitch_scale = 0.5
+autoplay = true
+
+[node name="TimeBetweenShots" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="TimeBetweenShots" to="." method="_on_time_between_shots_timeout"]
