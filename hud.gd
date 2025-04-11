@@ -23,6 +23,11 @@ func _on_mute_button_pressed() -> void:
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()
+	
+func update_health(current: int, max: int) -> void:
+	$HealthBar.value = current
+	$HealthBar/HealthLabel.text = "%d / %d" % [current, max]
 
-func _on_player_health_changed(health: Variant) -> void:
-	pass
+func update_stamina(current: int, max: int) -> void:
+	$StaminaBar.value = current
+	$StaminaBar/StaminaLabel.text = "%d / %d" % [current, max]

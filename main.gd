@@ -14,9 +14,20 @@ func new_game():
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
 	
+func _on_player_health_changed(health):
+	$HUD.update_health(int(health), $Player.max_health)
+
+func _on_player_stamina_changed(stamina):
+	$HUD.update_stamina(int(stamina), $Player.max_stamina)
+	
 func _ready():
 	var custom_cursor = preload("res://art/Cursor.png")
 	Input.set_custom_mouse_cursor(custom_cursor, Input.CURSOR_POINTING_HAND)
 	$HUD/HealthBar.hide()
 	$HUD/StaminaBar.hide()
 	$GameMusic.play()
+	
+	$HUD.update_health($Player.health, $Player.max_health)
+	$HUD.update_stamina($Player.stamina, $Player.max_stamina)
+	$Player.connect("health_changed", _on_player_health_changed)
+	$Player.connect("stamina_changed", _on_player_stamina_changed)

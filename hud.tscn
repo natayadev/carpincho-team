@@ -106,6 +106,16 @@ value = 1000.0
 texture_under = ExtResource("11_4u2vk")
 texture_progress = ExtResource("11_1fv7p")
 
+[node name="HealthLabel" type="Label" parent="HealthBar"]
+layout_mode = 0
+offset_left = 182.5
+offset_top = 130.0
+offset_right = 222.5
+offset_bottom = 153.0
+scale = Vector2(3, 3)
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="StaminaBar" type="TextureProgressBar" parent="."]
 offset_left = 330.0
 offset_top = 20.0
@@ -117,6 +127,16 @@ value = 250.0
 texture_under = ExtResource("11_4u2vk")
 texture_progress = ExtResource("12_4u2vk")
 script = SubResource("GDScript_1fv7p")
+
+[node name="StaminaLabel" type="Label" parent="StaminaBar"]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 140.0
+offset_right = 245.0
+offset_bottom = 163.0
+scale = Vector2(3, 3)
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MuteButton" to="." method="_on_mute_button_pressed"]
