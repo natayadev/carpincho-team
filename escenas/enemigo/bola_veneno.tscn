@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://do6xp0swnisox"]
 
-[ext_resource type="Script" uid="uid://dq2cprjhwmuso" path="res://scripts/bola_veneno.gd" id="1_wurf5"]
-[ext_resource type="Texture2D" uid="uid://ciqli06r05fan" path="res://art/bola_veneno_sprites.png" id="2_indnt"]
-[ext_resource type="AudioStream" uid="uid://nqfdv1ufqhck" path="res://art/sfx/gravel.ogg" id="3_umrj5"]
+[ext_resource type="Script" uid="uid://cpexr58vfnlql" path="res://escenas/enemigo/bola_veneno.gd" id="1_wurf5"]
+[ext_resource type="Texture2D" uid="uid://b5uxh5klt34ui" path="res://assets/sprites/bola_veneno_sprites.png" id="2_indnt"]
+[ext_resource type="AudioStream" uid="uid://cnqpc5h12gqgy" path="res://sounds/gravel.ogg" id="3_umrj5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_umrj5"]
 atlas = ExtResource("2_indnt")

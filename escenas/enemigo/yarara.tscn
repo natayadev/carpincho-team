@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://b3u8fvb5l1vtu"]
 
-[ext_resource type="Script" uid="uid://m0jfsa04cdjk" path="res://scripts/yarara.gd" id="1_6rnue"]
-[ext_resource type="Texture2D" uid="uid://cc2cqdmnl7xmv" path="res://art/yarara_sprites.png" id="2_mcpwl"]
-[ext_resource type="AudioStream" uid="uid://ewihbf7drxmu" path="res://art/sfx/drum_snare.wav" id="3_mcpwl"]
+[ext_resource type="Script" uid="uid://duetkt1ne1jmd" path="res://escenas/enemigo/yarara.gd" id="1_6rnue"]
+[ext_resource type="Texture2D" uid="uid://sfhh7howb7o7" path="res://assets/sprites/yarara_sprites.png" id="2_mcpwl"]
+[ext_resource type="AudioStream" uid="uid://gewgvwg3dllf" path="res://sounds/drum_snare.wav" id="3_mcpwl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aqgu8"]
 atlas = ExtResource("2_mcpwl")
