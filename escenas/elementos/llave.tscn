@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1ai3np7iftuy"]
+
+[ext_resource type="Script" uid="uid://7np26mrsm83b" path="res://escenas/elementos/llave.gd" id="1_5wv83"]
+[ext_resource type="Texture2D" uid="uid://k3fenugakncw" path="res://assets/llave2.png" id="1_sn31t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5wv83"]
+radius = 71.5019
+height = 246.371
+
+[node name="llave" type="Area2D"]
+script = ExtResource("1_5wv83")
+
+[node name="img-llave" type="Sprite2D" parent="."]
+position = Vector2(6, -3)
+texture = ExtResource("1_sn31t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 0.743647
+shape = SubResource("CapsuleShape2D_5wv83")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

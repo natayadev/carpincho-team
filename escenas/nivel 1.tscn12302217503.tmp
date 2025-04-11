@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgtvnn0dc7o5"]
+
+[ext_resource type="PackedScene" uid="uid://bjmr26ku2c7y6" path="res://escenas/personaje/personaje.tscn" id="1_p1ihv"]
+[ext_resource type="Script" uid="uid://gj41wu8trr63" path="res://escenas/gamemanager.gd" id="1_r0eip"]
+[ext_resource type="PackedScene" uid="uid://bnytrr5yh44ld" path="res://escenas/enemigo/enemigo.tscn" id="3_okgt3"]
+[ext_resource type="PackedScene" uid="uid://c1ai3np7iftuy" path="res://escenas/elementos/llave.tscn" id="4_2uy5e"]
+[ext_resource type="PackedScene" uid="uid://dlb0apmyudooo" path="res://escenas/elementos/jaula.tscn" id="5_3x577"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="gamemanager" type="Node" parent="." node_paths=PackedStringArray("characters", "enemies_parent")]
+script = ExtResource("1_r0eip")
+characters = [NodePath("../players/personaje"), NodePath("../players/CharacterBody2D")]
+enemies_parent = NodePath("../enemys")
+
+[node name="players" type="Node2D" parent="."]
+
+[node name="personaje" parent="players" instance=ExtResource("1_p1ihv")]
+position = Vector2(117, 121)
+
+[node name="CharacterBody2D" parent="players" instance=ExtResource("1_p1ihv")]
+position = Vector2(944, 450)
+
+[node name="enemys" type="Node2D" parent="."]
+position = Vector2(395, -233)
+
+[node name="enemigo" parent="enemys" instance=ExtResource("3_okgt3")]
+position = Vector2(890, 141)
+scale = Vector2(1.95092, 1.77729)
+
+[node name="enemigo2" parent="enemys" instance=ExtResource("3_okgt3")]
+position = Vector2(926, 334)
+scale = Vector2(1.95092, 1.77729)
+
+[node name="llave" parent="." instance=ExtResource("4_2uy5e")]
+position = Vector2(579, 99)
+scale = Vector2(0.410052, 0.344933)
+
+[node name="jaula" parent="." instance=ExtResource("5_3x577")]
+position = Vector2(947, 446)
+
+[connection signal="puerta_llave" from="llave" to="jaula" method="_on_llave_puerta_llave"]

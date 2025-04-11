@@ -1,17 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cuphtspclqawb"]
+[gd_scene load_steps=6 format=3 uid="uid://cuphtspclqawb"]
 
 [ext_resource type="Script" uid="uid://db73mp2au66sl" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://d1f7eabgfc3gq" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://c6bqruikxwql0" path="res://hud.tscn" id="4_1bvp3"]
 [ext_resource type="AudioStream" uid="uid://besqcc2os8w7l" path="res://sounds/game.ogg" id="4_lquwl"]
 [ext_resource type="AudioStream" uid="uid://bpnmwfbnbfiw0" path="res://sounds/gameover.wav" id="5_7mycd"]
-
-[sub_resource type="GDScript" id="GDScript_h2yge"]
-script/source = "extends Area2D
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
-size = Vector2(148, 20)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0xm2m")
@@ -30,23 +23,6 @@ position = Vector2(240, 450)
 
 [node name="HUD" parent="." instance=ExtResource("4_1bvp3")]
 
-[node name="RedArea" type="Area2D" parent="."]
-collision_layer = 2
-script = SubResource("GDScript_h2yge")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RedArea"]
-position = Vector2(990, 580)
-shape = SubResource("RectangleShape2D_h2yge")
-debug_color = Color(0.980392, 0, 0.392157, 0.713726)
-
-[node name="BlueArea" type="Area2D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueArea"]
-position = Vector2(160, 580)
-shape = SubResource("RectangleShape2D_h2yge")
-debug_color = Color(0, 0.552941, 0.905882, 0.505882)
-
 [node name="GameMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_lquwl")
 parameters/looping = true
@@ -58,7 +34,3 @@ stream = ExtResource("5_7mycd")
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
-[connection signal="area_entered" from="RedArea" to="Player" method="_on_red_area_area_entered"]
-[connection signal="area_exited" from="RedArea" to="Player" method="_on_red_area_area_exited"]
-[connection signal="area_entered" from="BlueArea" to="Player" method="_on_blue_area_area_entered"]
-[connection signal="area_exited" from="BlueArea" to="Player" method="_on_blue_area_area_exited"]

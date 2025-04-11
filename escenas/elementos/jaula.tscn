@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlb0apmyudooo"]
+
+[ext_resource type="Script" uid="uid://daj4os6somwqw" path="res://escenas/elementos/jaula.gd" id="1_lbpmn"]
+[ext_resource type="Texture2D" uid="uid://1mwx7nmkv4m6" path="res://assets/jaula (1).png" id="1_n112h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thy8l"]
+size = Vector2(8.53112, 13.3662)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yxw3f"]
+a = Vector2(-6.14092, -1.45346)
+b = Vector2(-7.90236, 15.0468)
+
+[node name="jaula" type="Node2D"]
+script = ExtResource("1_lbpmn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+rotation = -0.576442
+
+[node name="Jaula(1)" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-5.28212, -1.04841)
+rotation = 0.576442
+scale = Vector2(0.349359, 0.301782)
+texture = ExtResource("1_n112h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-107.903, -72.5326)
+rotation = 0.576442
+scale = Vector2(1.99141, 17.6233)
+shape = SubResource("RectangleShape2D_thy8l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(109.496, 66.412)
+rotation = 0.576442
+scale = Vector2(1.99141, 17.6233)
+shape = SubResource("RectangleShape2D_thy8l")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-59.7032, 90.003)
+rotation = -1.00477
+scale = Vector2(1.99141, 17.6233)
+shape = SubResource("RectangleShape2D_thy8l")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(61.2966, -96.1235)
+rotation = -0.984018
+scale = Vector2(1.99141, 17.6233)
+shape = SubResource("RectangleShape2D_thy8l")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-165, -96)
+rotation = -0.00288899
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(22, -37)
+scale = Vector2(1.90606, 18.6653)
+shape = SubResource("SegmentShape2D_yxw3f")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(333, -39)
+rotation = -0.0205009
+scale = Vector2(1.90606, 18.6653)
+shape = SubResource("SegmentShape2D_yxw3f")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(41, 229)
+rotation = -1.58539
+scale = Vector2(1.90606, 18.6653)
+shape = SubResource("SegmentShape2D_yxw3f")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(37, -75)
+rotation = -1.5817
+scale = Vector2(1.90606, 18.6653)
+shape = SubResource("SegmentShape2D_yxw3f")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

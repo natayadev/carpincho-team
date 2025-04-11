@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnytrr5yh44ld"]
+
+[ext_resource type="Script" uid="uid://b721gvfc8anv3" path="res://escenas/enemigo/enemigo.gd" id="1_r46xo"]
+[ext_resource type="Texture2D" uid="uid://drswlw24lf5w0" path="res://assets/compañero.png" id="2_07say"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5tj2"]
+size = Vector2(32, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_moxti"]
+size = Vector2(77, 69.9375)
+
+[node name="enemigo" type="CharacterBody2D"]
+script = ExtResource("1_r46xo")
+
+[node name="Compañero" type="Sprite2D" parent="."]
+position = Vector2(-1, -4)
+texture = ExtResource("2_07say")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a5tj2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -5.03125)
+shape = SubResource("RectangleShape2D_moxti")
