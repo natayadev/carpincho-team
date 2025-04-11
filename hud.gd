@@ -1,30 +1,28 @@
 extends CanvasLayer
 
 signal start_game
-
-func show_message(text):
-	$Message.text = text
-	$Message.show()
-	$MessageTimer.start()
+var is_muted := false
 
 func show_game_over():
-	show_message("Perdiste :(")
-	await $MessageTimer.timeout
-	$Message.show()
-	await get_tree().create_timer(1.0).timeout
 	$StartButton.show()
-
-func update_score(score):
-	$ScoreLabel.text = str(score)
 
 func _on_start_button_pressed():
 	$StartButton.hide()
-	$Message.hide()
+	$ExitButton.hide()
+	$MuteButton.hide()
+	$Background.hide()
+	$Title.hide()
+	$HealthBar.show()
+	$StaminaBar.show()	
 	start_game.emit()
+	
+func _on_mute_button_pressed() -> void:
+	is_muted = !is_muted
+	var master_bus := AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_mute(master_bus, is_muted)
 
-func _on_message_timer_timeout():
-	$Message.hide()
-
+func _on_exit_button_pressed() -> void:
+	get_tree().quit()
 
 func _on_player_health_changed(health: Variant) -> void:
-	pass # Replace with function body.
+	pass

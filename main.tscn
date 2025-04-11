@@ -1,23 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuphtspclqawb"]
+[gd_scene load_steps=8 format=3 uid="uid://cuphtspclqawb"]
 
 [ext_resource type="Script" uid="uid://db73mp2au66sl" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://d1f7eabgfc3gq" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://c6bqruikxwql0" path="res://hud.tscn" id="4_1bvp3"]
-[ext_resource type="Script" uid="uid://f848i0pw85hj" path="res://red_area.gd" id="4_lquwl"]
+[ext_resource type="AudioStream" uid="uid://dt6ajmlsq5f8q" path="res://sounds/game.ogg" id="4_lquwl"]
+[ext_resource type="AudioStream" uid="uid://bpnmwfbnbfiw0" path="res://sounds/gameover.wav" id="5_7mycd"]
+
+[sub_resource type="GDScript" id="GDScript_h2yge"]
+script/source = "extends Area2D
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
 size = Vector2(148, 20)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0xm2m")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.795708, 0.375508, 0.339074, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 
@@ -33,7 +30,7 @@ position = Vector2(240, 450)
 [node name="HUD" parent="." instance=ExtResource("4_1bvp3")]
 
 [node name="RedArea" type="Area2D" parent="."]
-script = ExtResource("4_lquwl")
+script = SubResource("GDScript_h2yge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedArea"]
 position = Vector2(990, 580)
@@ -46,6 +43,12 @@ debug_color = Color(0.980392, 0, 0.392157, 0.713726)
 position = Vector2(160, 580)
 shape = SubResource("RectangleShape2D_h2yge")
 debug_color = Color(0, 0.552941, 0.905882, 0.505882)
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_lquwl")
+
+[node name="GameOverMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_7mycd")
 
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
