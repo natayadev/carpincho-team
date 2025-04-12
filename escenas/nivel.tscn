@@ -302,3 +302,4 @@ scale = Vector2(10.7863, 7.28696)
 [connection signal="puerta_llave" from="llave2" to="jaula2" method="_on_llave_2_puerta_llave"]
 [connection signal="puerta_llave" from="llave3" to="jaula" method="_on_llave_puerta_llave"]
 [connection signal="puerta_llave" from="llave3" to="jaula2" method="_on_llave_2_puerta_llave"]
+[connection signal="puerta_llave" from="llave3" to="jaula3" method="_on_llave_3_puerta_llave"]

@@ -14,3 +14,7 @@ func _on_llave_puerta_llave() -> void:
 
 func _on_llave_2_puerta_llave() -> void:
 	llave = true
+
+
+func _on_llave_3_puerta_llave() -> void:
+	llave = true

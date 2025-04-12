@@ -9,3 +9,6 @@ res://termales.tscn
 res://escenas/enemigo/perseguidor.tscn
 res://triger-ganar.tscn
 res://triger_ganar.gd
+res://ganaste-escena.tscn
+res://hud.tscn
+res://ganaste_escena.gd

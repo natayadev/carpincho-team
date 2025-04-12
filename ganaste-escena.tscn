@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg2i64khfg56d"]
+
+[ext_resource type="Script" uid="uid://dt4mjyyvkxc5o" path="res://ganaste_escena.gd" id="1_21ura"]
+[ext_resource type="Texture2D" uid="uid://cwi6qhggu3le2" path="res://art/Ganaste.png" id="1_g0lr4"]
+[ext_resource type="FontFile" uid="uid://dn67pmsqwdj3y" path="res://fonts/Xolonium-Regular.ttf" id="3_h5x34"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pvayr"]
+font = ExtResource("3_h5x34")
+
+[node name="CanvasLayer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_21ura")
+
+[node name="Ganaste" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 8.00006
+offset_top = 8.0
+offset_right = 1544.0
+offset_bottom = 1032.0
+scale = Vector2(0.737066, 0.618983)
+mouse_filter = 0
+texture = ExtResource("1_g0lr4")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 193.0
+offset_right = 544.0
+offset_bottom = 216.0
+scale = Vector2(2.30172, 2.41157)
+text = "haz click para continuar"
+label_settings = SubResource("LabelSettings_pvayr")

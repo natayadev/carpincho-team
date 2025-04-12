@@ -59,5 +59,6 @@ texture = ExtResource("1_36qli")
 libraries = {
 &"": SubResource("AnimationLibrary_5sdrh")
 }
+movie_quit_on_finish = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
