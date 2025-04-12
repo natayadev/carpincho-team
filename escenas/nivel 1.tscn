@@ -3230,21 +3230,21 @@ scale = Vector2(0.650787, 0.39581)
 [node name="personaje" parent="players" groups=["players"] instance=ExtResource("1_p1ihv")]
 z_index = 1
 position = Vector2(493.249, 987.848)
-scale = Vector2(2.40251, 2.43843)
+scale = Vector2(3, 4)
 
 [node name="Camera2D" type="Camera2D" parent="players/personaje"]
-scale = Vector2(0.991698, -0.503878)
+scale = Vector2(3, 4)
 limit_left = 100
 
 [node name="personaje2" parent="players" groups=["players"] instance=ExtResource("1_p1ihv")]
 z_index = 1
 position = Vector2(2839.64, 1462.82)
-scale = Vector2(2.60069, 2.21632)
+scale = Vector2(3, 4)
 
 [node name="personaje3" parent="players" groups=["players"] instance=ExtResource("1_p1ihv")]
 z_index = 1
 position = Vector2(198.222, -421.92)
-scale = Vector2(2.60069, 2.21632)
+scale = Vector2(3, 4)
 
 [node name="enemys" type="Node2D" parent="."]
 position = Vector2(395, -233)
