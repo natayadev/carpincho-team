@@ -1,3 +1,9 @@
 res://main.tscn
 res://termales.gd
 res://escenas/personaje/personaje.gd
+res://escenas/nivel.tscn
+res://escenas/elementos/llave.gd
+res://escenas/elementos/jaula.gd
+res://escenas/personaje/personaje.tscn
+res://termales.tscn
+res://escenas/enemigo/perseguidor.tscn

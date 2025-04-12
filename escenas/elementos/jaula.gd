@@ -3,7 +3,7 @@ extends Node2D
 var llave = false
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.get_name() == "personaje" and llave == true:
+	if body.is_in_group("players") and llave == true:
 		queue_free()
 
 
