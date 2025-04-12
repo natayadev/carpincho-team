@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cgtvnn0dc7o5"]
+[gd_scene load_steps=20 format=3 uid="uid://cgtvnn0dc7o5"]
 
 [ext_resource type="Script" uid="uid://dbc635qxxtq2e" path="res://escenas/nivel.gd" id="1_fpuh1"]
 [ext_resource type="Script" uid="uid://gj41wu8trr63" path="res://escenas/gamemanager.gd" id="1_t4jkt"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://beo885iryto3w" path="res://art/StaminaBar.png" id="12_vt5qv"]
 [ext_resource type="PackedScene" uid="uid://dshq10emc0gg6" path="res://termales.tscn" id="14_8p663"]
 [ext_resource type="AudioStream" uid="uid://besqcc2os8w7l" path="res://sounds/game.ogg" id="15_y727t"]
+[ext_resource type="PackedScene" uid="uid://cpeplcemce2q8" path="res://triger-ganar.tscn" id="16_beshd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bc6pi"]
 texture = ExtResource("9_5m6on")
@@ -72,7 +73,7 @@ scale = Vector2(0.650787, 0.39581)
 
 [node name="personaje" parent="players" groups=["players"] instance=ExtResource("2_fpuh1")]
 z_index = 1
-position = Vector2(752.934, 1149.54)
+position = Vector2(630.007, 1096.49)
 scale = Vector2(6, 8)
 
 [node name="Camera2D" type="Camera2D" parent="players/personaje"]
@@ -211,10 +212,10 @@ z_index = 1
 position = Vector2(985, -3654)
 
 [node name="Nivel2" type="TextureRect" parent="."]
-offset_left = 82.0
-offset_top = -6048.0
-offset_right = 3141.0
-offset_bottom = -1035.0
+offset_left = 63.0
+offset_top = -6035.0
+offset_right = 3122.0
+offset_bottom = -1022.0
 scale = Vector2(0.7, 0.695)
 texture = ExtResource("8_l34rc")
 
@@ -291,6 +292,10 @@ scale = Vector2(5.33847, 3.67684)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_y727t")
 autoplay = true
+
+[node name="triger-ganar" parent="." instance=ExtResource("16_beshd")]
+position = Vector2(665, -5976)
+scale = Vector2(10.7863, 7.28696)
 
 [connection signal="puerta_llave" from="llave" to="jaula" method="_on_llave_puerta_llave"]
 [connection signal="puerta_llave" from="llave2" to="jaula" method="_on_llave_puerta_llave"]

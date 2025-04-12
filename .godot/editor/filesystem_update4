@@ -7,3 +7,5 @@ res://escenas/elementos/jaula.gd
 res://escenas/personaje/personaje.tscn
 res://termales.tscn
 res://escenas/enemigo/perseguidor.tscn
+res://triger-ganar.tscn
+res://triger_ganar.gd
