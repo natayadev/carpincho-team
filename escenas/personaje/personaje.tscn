@@ -55,3 +55,5 @@ shape = SubResource("RectangleShape2D_ltgau")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cx3pr")
 animation = &"idle"
+
+[node name="Control" type="CanvasLayer" parent="."]

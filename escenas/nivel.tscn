@@ -1,0 +1,267 @@
+[gd_scene load_steps=18 format=3 uid="uid://cgtvnn0dc7o5"]
+
+[ext_resource type="Script" uid="uid://dbc635qxxtq2e" path="res://escenas/nivel.gd" id="1_fpuh1"]
+[ext_resource type="Script" uid="uid://gj41wu8trr63" path="res://escenas/gamemanager.gd" id="1_t4jkt"]
+[ext_resource type="PackedScene" uid="uid://bjmr26ku2c7y6" path="res://escenas/personaje/personaje.tscn" id="2_fpuh1"]
+[ext_resource type="PackedScene" uid="uid://blpxvpf1mr1ff" path="res://escenas/enemigo/perseguidor.tscn" id="3_8p663"]
+[ext_resource type="PackedScene" uid="uid://bnytrr5yh44ld" path="res://escenas/enemigo/enemigo.tscn" id="4_y727t"]
+[ext_resource type="PackedScene" uid="uid://c1ai3np7iftuy" path="res://escenas/elementos/llave.tscn" id="5_beshd"]
+[ext_resource type="PackedScene" uid="uid://dlb0apmyudooo" path="res://escenas/elementos/jaula.tscn" id="6_hfcx1"]
+[ext_resource type="Texture2D" uid="uid://cpy4td8d3gbrw" path="res://art/Nivel 1.png" id="7_2xp46"]
+[ext_resource type="Texture2D" uid="uid://dwmfjj47ls2rs" path="res://art/Nivel 2.png" id="8_l34rc"]
+[ext_resource type="Texture2D" uid="uid://cy0574wj0acpr" path="res://assets/detail_window.png" id="9_5m6on"]
+[ext_resource type="Texture2D" uid="uid://jcuir4flwyq5" path="res://art/EmptyBar.png" id="10_xxmoc"]
+[ext_resource type="Texture2D" uid="uid://dcjsxl344hamy" path="res://art/HealthBar.png" id="11_qve5v"]
+[ext_resource type="Texture2D" uid="uid://beo885iryto3w" path="res://art/StaminaBar.png" id="12_vt5qv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bc6pi"]
+texture = ExtResource("9_5m6on")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_3wxv8"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_bc6pi")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bc6pi"]
+radius = 228.372
+
+[sub_resource type="GDScript" id="GDScript_mmtn1"]
+script/source = "extends TextureProgressBar
+"
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_fpuh1")
+
+[node name="gamemanager" type="Node" parent="." node_paths=PackedStringArray("characters", "enemies_parent")]
+script = ExtResource("1_t4jkt")
+characters = [NodePath("../players/personaje"), NodePath("../players/personaje2")]
+enemies_parent = NodePath("../enemys")
+
+[node name="players" type="Node2D" parent="."]
+scale = Vector2(0.650787, 0.39581)
+
+[node name="personaje" parent="players" groups=["players"] instance=ExtResource("2_fpuh1")]
+z_index = 1
+position = Vector2(752.934, 1149.54)
+scale = Vector2(6, 8)
+
+[node name="Camera2D" type="Camera2D" parent="players/personaje"]
+scale = Vector2(6, 8)
+limit_left = 100
+
+[node name="personaje2" parent="players" groups=["players"] instance=ExtResource("2_fpuh1")]
+z_index = 1
+position = Vector2(3051.69, 1427.45)
+scale = Vector2(6, 8)
+
+[node name="personaje3" parent="players" groups=["players"] instance=ExtResource("2_fpuh1")]
+z_index = 1
+position = Vector2(1501.26, -9216.54)
+scale = Vector2(6, 8)
+
+[node name="enemys" type="Node2D" parent="."]
+position = Vector2(395, -233)
+
+[node name="perseguidor" parent="enemys" groups=["enemigos"] instance=ExtResource("3_8p663")]
+z_index = 1
+position = Vector2(514, 514)
+scale = Vector2(1.5, 1.5)
+
+[node name="perseguidor2" parent="enemys" groups=["enemigos"] instance=ExtResource("3_8p663")]
+z_index = 1
+position = Vector2(864, 443)
+scale = Vector2(1.5, 1.5)
+
+[node name="perseguidor3" parent="enemys" groups=["enemigos"] instance=ExtResource("3_8p663")]
+z_index = 1
+position = Vector2(1106, 267)
+scale = Vector2(1.5, 1.5)
+
+[node name="perseguidor4" parent="enemys" groups=["enemigos"] instance=ExtResource("3_8p663")]
+z_index = 1
+position = Vector2(46, -1735)
+scale = Vector2(1.5, 1.5)
+
+[node name="perseguidor5" parent="enemys" groups=["enemigos"] instance=ExtResource("3_8p663")]
+z_index = 1
+position = Vector2(775, -1282)
+scale = Vector2(1.5, 1.5)
+
+[node name="yarara" parent="enemys" groups=["enemigos"] instance=ExtResource("4_y727t")]
+z_index = 1
+position = Vector2(-97, -3167)
+scale = Vector2(1.5, 2)
+
+[node name="yarara2" parent="enemys" groups=["enemigos"] instance=ExtResource("4_y727t")]
+z_index = 1
+position = Vector2(1026, -3212)
+scale = Vector2(1.5, 2)
+
+[node name="yarara3" parent="enemys" groups=["enemigos"] instance=ExtResource("4_y727t")]
+z_index = 1
+position = Vector2(-90, -5262)
+scale = Vector2(1.5, 2)
+
+[node name="yarara4" parent="enemys" groups=["enemigos"] instance=ExtResource("4_y727t")]
+z_index = 1
+position = Vector2(1696, -3706)
+scale = Vector2(1.5, 2)
+
+[node name="yarara5" parent="enemys" groups=["enemigos"] instance=ExtResource("4_y727t")]
+z_index = 1
+position = Vector2(910, -4500)
+scale = Vector2(1.5, 2)
+
+[node name="llave" parent="." instance=ExtResource("5_beshd")]
+z_index = 1
+position = Vector2(1260, 113)
+scale = Vector2(0.4, 0.4)
+
+[node name="llave2" parent="." instance=ExtResource("5_beshd")]
+z_index = 1
+position = Vector2(223, -1866)
+scale = Vector2(0.410052, 0.344933)
+
+[node name="llave3" parent="." instance=ExtResource("5_beshd")]
+z_index = 1
+position = Vector2(715, -5864)
+scale = Vector2(0.410052, 0.344933)
+
+[node name="jaula" parent="." instance=ExtResource("6_hfcx1")]
+z_index = 1
+position = Vector2(1982, 554)
+
+[node name="jaula2" parent="." instance=ExtResource("6_hfcx1")]
+z_index = 1
+position = Vector2(283, -417)
+
+[node name="jaula3" parent="." instance=ExtResource("6_hfcx1")]
+z_index = 1
+position = Vector2(985, -3654)
+
+[node name="Nivel1" type="TextureRect" parent="."]
+offset_left = 82.0
+offset_top = -2571.0
+offset_right = 3139.0
+offset_bottom = 2429.0
+scale = Vector2(0.7, 0.695)
+texture = ExtResource("7_2xp46")
+
+[node name="Nivel2" type="TextureRect" parent="."]
+offset_left = 82.0
+offset_top = -6048.0
+offset_right = 3141.0
+offset_bottom = -1035.0
+scale = Vector2(0.7, 0.695)
+texture = ExtResource("8_l34rc")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_3wxv8")
+format = 2
+layer_0/tile_data = PackedInt32Array(65566, 0, 0, 131102, 0, 1, 196638, 0, 2, 262174, 0, 3, 65567, 65536, 0, 131103, 65536, 1, 196639, 65536, 2, 262175, 65536, 3, 65568, 131072, 0, 131104, 131072, 1, 196640, 131072, 2, 262176, 131072, 3, 65569, 196608, 0, 131105, 196608, 1, 196641, 196608, 2, 262177, 196608, 3, 65561, 0, 0, 131097, 0, 1, 196633, 0, 2, 262169, 0, 3, 65562, 65536, 0, 131098, 65536, 1, 196634, 65536, 2, 262170, 65536, 3, 65563, 131072, 0, 131099, 131072, 1, 196635, 131072, 2, 262171, 131072, 3, 65564, 196608, 0, 131100, 196608, 1, 196636, 196608, 2, 262172, 196608, 3, 65557, 0, 0, 131093, 0, 1, 196629, 0, 2, 262165, 0, 3, 65558, 65536, 0, 131094, 65536, 1, 196630, 65536, 2, 262166, 65536, 3, 65559, 131072, 0, 131095, 131072, 1, 196631, 131072, 2, 262167, 131072, 3, 65560, 196608, 0, 131096, 196608, 1, 196632, 196608, 2, 262168, 196608, 3, 131085, 0, 0, 196621, 0, 1, 262157, 0, 2, 327693, 0, 3, 131086, 65536, 0, 196622, 65536, 1, 262158, 65536, 2, 327694, 65536, 3, 131087, 131072, 0, 196623, 131072, 1, 262159, 131072, 2, 327695, 131072, 3, 131088, 196608, 0, 196624, 196608, 1, 262160, 196608, 2, 327696, 196608, 3, 917511, 0, 0, 983047, 0, 1, 1048583, 0, 2, 1114119, 0, 3, 917512, 65536, 0, 983048, 65536, 1, 1048584, 65536, 2, 1114120, 65536, 3, 917513, 131072, 0, 983049, 131072, 1, 1048585, 131072, 2, 1114121, 131072, 3, 917514, 196608, 0, 983050, 196608, 1, 1048586, 196608, 2, 1114122, 196608, 3, 1507335, 0, 0, 1572871, 0, 1, 1638407, 0, 2, 1703943, 0, 3, 1507336, 65536, 0, 1572872, 65536, 1, 1638408, 65536, 2, 1703944, 65536, 3, 1507337, 131072, 0, 1572873, 131072, 1, 1638409, 131072, 2, 1703945, 131072, 3, 1507338, 196608, 0, 1572874, 196608, 1, 1638410, 196608, 2, 1703946, 196608, 3, 2162697, 0, 0, 2228233, 0, 1, 2293769, 0, 2, 2359305, 0, 3, 2162698, 65536, 0, 2228234, 65536, 1, 2293770, 65536, 2, 2359306, 65536, 3, 2162699, 131072, 0, 2228235, 131072, 1, 2293771, 131072, 2, 2359307, 131072, 3, 2162700, 196608, 0, 2228236, 196608, 1, 2293772, 196608, 2, 2359308, 196608, 3, 2818056, 0, 0, 2883592, 0, 1, 2949128, 0, 2, 3014664, 0, 3, 2818057, 65536, 0, 2883593, 65536, 1, 2949129, 65536, 2, 3014665, 65536, 3, 2818058, 131072, 0, 2883594, 131072, 1, 2949130, 131072, 2, 3014666, 131072, 3, 2818059, 196608, 0, 2883595, 196608, 1, 2949131, 196608, 2, 3014667, 196608, 3)
+
+[node name="AguaTermal" type="Area2D" parent="."]
+position = Vector2(1922, -415)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AguaTermal"]
+scale = Vector2(1.5, 1)
+shape = SubResource("CircleShape2D_bc6pi")
+debug_color = Color(0.54947, 0.402612, 1, 0.584314)
+
+[node name="AguaTermal2" type="Area2D" parent="."]
+position = Vector2(1905, -3420)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AguaTermal2"]
+scale = Vector2(1.5, 1)
+shape = SubResource("CircleShape2D_bc6pi")
+debug_color = Color(0.54947, 0.402612, 1, 0.584314)
+
+[node name="AguaTermal3" type="Area2D" parent="."]
+position = Vector2(973, -5040)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AguaTermal3"]
+scale = Vector2(1.5, 1)
+shape = SubResource("CircleShape2D_bc6pi")
+debug_color = Color(0.54947, 0.402612, 1, 0.584314)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" type="TextureProgressBar" parent="UI"]
+offset_left = 49.0
+offset_top = 37.0
+offset_right = 697.0
+offset_bottom = 158.0
+scale = Vector2(0.4, 0.4)
+max_value = 1000.0
+value = 1000.0
+texture_under = ExtResource("10_xxmoc")
+texture_progress = ExtResource("11_qve5v")
+
+[node name="HealthLabel" type="Label" parent="UI/HealthBar"]
+layout_mode = 0
+offset_left = 182.5
+offset_top = 130.0
+offset_right = 222.5
+offset_bottom = 153.0
+scale = Vector2(3, 3)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StaminaBar" type="TextureProgressBar" parent="UI"]
+offset_left = 329.0
+offset_top = 37.0
+offset_right = 977.0
+offset_bottom = 158.0
+scale = Vector2(0.4, 0.4)
+max_value = 1000.0
+value = 250.0
+texture_under = ExtResource("10_xxmoc")
+texture_progress = ExtResource("12_vt5qv")
+script = SubResource("GDScript_mmtn1")
+
+[node name="StaminaLabel" type="Label" parent="UI/StaminaBar"]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 140.0
+offset_right = 245.0
+offset_bottom = 163.0
+scale = Vector2(3, 3)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="puerta_llave" from="llave" to="jaula" method="_on_llave_puerta_llave"]
+[connection signal="puerta_llave" from="llave2" to="jaula" method="_on_llave_puerta_llave"]
+[connection signal="puerta_llave" from="llave2" to="jaula2" method="_on_llave_2_puerta_llave"]
+[connection signal="puerta_llave" from="llave3" to="jaula" method="_on_llave_puerta_llave"]
+[connection signal="puerta_llave" from="llave3" to="jaula2" method="_on_llave_2_puerta_llave"]

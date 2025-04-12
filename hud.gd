@@ -9,8 +9,7 @@ func show_game_over():
 	$CreditsButton.show()
 	$MuteButton.show()
 	$Title.show()
-	$HealthBar.hide()
-	$StaminaBar.hide()
+	$Creditos.hide()
 	$Background.show()
 
 func _on_start_button_pressed():
@@ -20,8 +19,7 @@ func _on_start_button_pressed():
 	$CreditsButton.hide()
 	$Background.hide()
 	$Title.hide()
-	$HealthBar.show()
-	$StaminaBar.show()	
+	$Creditos.hide()
 	start_game.emit()
 	
 func _on_mute_button_pressed() -> void:
@@ -32,13 +30,9 @@ func _on_mute_button_pressed() -> void:
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()
 	
-func update_health(current: int, max: int) -> void:
-	$HealthBar.value = current
-	$HealthBar/HealthLabel.text = "%d / %d" % [current, max]
-
-func update_stamina(current: int, max: int) -> void:
-	$StaminaBar.value = current
-	$StaminaBar/StaminaLabel.text = "%d / %d" % [current, max]
-
 func _on_credits_button_pressed() -> void:
-	pass # Replace with function body.
+	$Title.hide()
+	$Creditos.show()
+	
+func _ready():
+	$Creditos.hide()  

@@ -10,3 +10,10 @@ res://escenas/enemigo/enemigo.gd
 res://escenas/personaje/personaje.gd
 res://escenas/enemigo/perseguidor.gd
 res://escenas/enemigo/perseguidor.tscn
+res://escenas/elementos/HUD.tscn
+res://hud.tscn
+res://escenas/nivel.tscn
+res://escenas/nivel.gd
+res://hud.gd
+res://player.gd
+res://escenas/agua_termal.gd

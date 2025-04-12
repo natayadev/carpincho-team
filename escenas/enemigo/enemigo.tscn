@@ -10,6 +10,7 @@ size = Vector2(32, 30)
 size = Vector2(77, 69.9375)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r46xo"]
+radius = 19.9721
 
 [node name="enemigo" type="CharacterBody2D"]
 script = ExtResource("1_r46xo")
