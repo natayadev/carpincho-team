@@ -1,7 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://blpxvpf1mr1ff"]
+[gd_scene load_steps=10 format=3 uid="uid://blpxvpf1mr1ff"]
 
 [ext_resource type="Script" uid="uid://dfvafkv8bg7ha" path="res://escenas/enemigo/perseguidor.gd" id="1_nthqv"]
 [ext_resource type="Texture2D" uid="uid://dytxustl5qaok" path="res://art/Caniche.png" id="2_nthqv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nthqv"]
+atlas = ExtResource("2_nthqv")
+region = Rect2(0, 0, 200, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wqgfo"]
 atlas = ExtResource("2_nthqv")
@@ -13,6 +17,14 @@ region = Rect2(200, 0, 200, 200)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yynuq"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nthqv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wqgfo")
@@ -37,8 +49,9 @@ size = Vector2(63, 53)
 script = ExtResource("1_nthqv")
 
 [node name="run" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.400339, 0.325574)
 sprite_frames = SubResource("SpriteFrames_yynuq")
-animation = &"run"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 1)

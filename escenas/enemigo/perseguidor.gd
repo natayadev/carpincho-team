@@ -7,6 +7,9 @@ signal clicked(enemy)
 var player = null  # Se completa al detectar al jugador
 
 @onready var click_area = $Area2D 
+@onready var animated_sprite = $run
+	
+			
 
 
 func _ready():
@@ -20,6 +23,18 @@ func _physics_process(delta):
 		move_and_slide()
 	else:
 		velocity = Vector2.ZERO
+		
+	if velocity.length() > 0.1:
+		if animated_sprite.animation != "run":
+			animated_sprite.play("run")
+	else:
+		if animated_sprite.animation != "idle":
+			animated_sprite.play("idle")
+	if velocity.x < -10:
+		animated_sprite.flip_h = true  # Mira a la izquierda
+	elif velocity.x > 10:
+		animated_sprite.flip_h = false  # Mira a la derecha
+
 
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
