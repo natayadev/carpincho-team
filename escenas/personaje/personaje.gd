@@ -91,6 +91,10 @@ func take_damage(amount: int):
 func use_stamina(amount: int):
 	stamina = clamp(stamina - amount, 0, max_stamina)
 	emit_signal("stamina_changed", stamina)
+	
+func heal(amount: float) -> void:
+	health = min(health + amount, max_health)
+	emit_signal("health_changed", health)
 
 func die():
 	queue_free()

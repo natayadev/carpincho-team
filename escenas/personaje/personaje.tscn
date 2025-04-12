@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://lfhr41mtbqr0" path="res://art/Capybara-walk_right 6.png" id="7_iqlba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltgau"]
-size = Vector2(122, 121)
+size = Vector2(126.915, 87.1525)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cx3pr"]
 animations = [{
@@ -49,6 +49,7 @@ animations = [{
 script = ExtResource("1_ltgau")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.820258, 0)
 scale = Vector2(0.333762, 0.344224)
 shape = SubResource("RectangleShape2D_ltgau")
 

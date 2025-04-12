@@ -1,6 +1,7 @@
-CanvasLayer
+AudioStreamPlayer
 CollisionShape2D
 Area2D
+CanvasLayer
 TileMap
 TextureRect
 ProgressBar
@@ -10,5 +11,4 @@ Timer
 AnimatedSprite2D
 CharacterBody2D
 Label
-AudioStreamPlayer
 ColorRect
