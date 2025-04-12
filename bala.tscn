@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://8q50hu5ewkco" path="res://bola_veneno_sprites1.png" id="1_t4wd0"]
 [ext_resource type="Texture2D" uid="uid://b2dasit2nn73l" path="res://bola_veneno_sprites2.png" id="2_j8aw3"]
 [ext_resource type="Texture2D" uid="uid://do25cb6hggivv" path="res://bola_veneno_sprites4.png" id="3_f2pop"]
-[ext_resource type="Texture2D" uid="uid://pi68y53p82km" path="res://bola_veneno_sprites.png" id="4_q7htu"]
+[ext_resource type="Texture2D" uid="uid://duyx74jc7bq5p" path="res://bola_veneno_sprites.png" id="4_q7htu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jgus7"]
 animations = [{

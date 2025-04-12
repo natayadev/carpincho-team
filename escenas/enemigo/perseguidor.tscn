@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://blpxvpf1mr1ff"]
+
+[ext_resource type="Script" uid="uid://dfvafkv8bg7ha" path="res://escenas/enemigo/perseguidor.gd" id="1_nthqv"]
+[ext_resource type="Texture2D" uid="uid://drswlw24lf5w0" path="res://assets/compañero.png" id="2_wqgfo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ga16"]
+size = Vector2(41, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv871"]
+size = Vector2(63, 53)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r01gy"]
+
+[node name="perseguidor" type="CharacterBody2D"]
+script = ExtResource("1_nthqv")
+
+[node name="Compañero" type="Sprite2D" parent="."]
+texture = ExtResource("2_wqgfo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_0ga16")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 2)
+shape = SubResource("RectangleShape2D_iv871")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+scale = Vector2(15.6438, 12.3547)
+shape = SubResource("CircleShape2D_r01gy")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

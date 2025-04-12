@@ -1,3 +1,6 @@
+CollisionShape2D
+Area2D
+CharacterBody2D
 CanvasLayer
 TextureRect
 Label
@@ -5,6 +8,4 @@ AudioStreamPlayer
 ColorRect
 TextureButton
 TextureProgressBar
-Area2D
 ProgressBar
-CollisionShape2D

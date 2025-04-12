@@ -1,7 +1,8 @@
-[gd_scene load_steps=43 format=3 uid="uid://cgtvnn0dc7o5"]
+[gd_scene load_steps=44 format=3 uid="uid://cgtvnn0dc7o5"]
 
 [ext_resource type="PackedScene" uid="uid://bjmr26ku2c7y6" path="res://escenas/personaje/personaje.tscn" id="1_p1ihv"]
 [ext_resource type="Script" uid="uid://gj41wu8trr63" path="res://escenas/gamemanager.gd" id="1_r0eip"]
+[ext_resource type="PackedScene" uid="uid://blpxvpf1mr1ff" path="res://escenas/enemigo/perseguidor.tscn" id="3_drq7u"]
 [ext_resource type="PackedScene" uid="uid://bnytrr5yh44ld" path="res://escenas/enemigo/enemigo.tscn" id="3_okgt3"]
 [ext_resource type="PackedScene" uid="uid://c1ai3np7iftuy" path="res://escenas/elementos/llave.tscn" id="4_2uy5e"]
 [ext_resource type="PackedScene" uid="uid://dlb0apmyudooo" path="res://escenas/elementos/jaula.tscn" id="5_3x577"]
@@ -3248,6 +3249,10 @@ scale = Vector2(3, 4)
 
 [node name="enemys" type="Node2D" parent="."]
 position = Vector2(395, -233)
+
+[node name="perseguidor" parent="enemys" instance=ExtResource("3_drq7u")]
+z_index = 1
+position = Vector2(179, 493)
 
 [node name="enemigo" parent="enemys" instance=ExtResource("3_okgt3")]
 z_index = 1
