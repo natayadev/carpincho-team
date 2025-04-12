@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+@export var health = 1000
 @export var speed: float = 400
 @export var attack_speed: float = 600  # Velocidad del ataque (tackle)
 @export var attack_distance: float = 100  # Distancia mínima para impactar al enemigo
@@ -8,6 +8,21 @@ extends CharacterBody2D
 var target: Vector2
 var enemy_target: Node2D = null
 var is_attacking: bool = false
+
+@onready var animated_sprite = $AnimatedSprite2D
+
+func _process(delta):
+	if velocity.length() > 0.1:
+		if animated_sprite.animation != "walk":
+			animated_sprite.play("walk")
+			
+	else:
+		if animated_sprite.animation != "idle":
+			animated_sprite.play("idle")
+	if velocity.x < -10:
+		animated_sprite.flip_h = true  # Mira a la izquierda
+	elif velocity.x > 10:
+		animated_sprite.flip_h = false  # Mira a la derecha
 
 func _ready():
 	target = global_position  # Inicializar el target en la posición actual
@@ -62,3 +77,17 @@ func get_clicked_object(mouse_pos) -> Node2D:
 	if result.size() > 0:
 		return result[0].collider
 	return null
+	
+	
+	#recibir daño
+	
+	# Método para recibir daño
+func take_damage(amount):
+	health -= amount
+	print("Salud del jugador: ", health)  # Para depuración
+	if health <= 0:
+		die()
+
+# Método para manejar la muerte del jugador
+func die():
+	queue_free()

@@ -3228,27 +3228,31 @@ enemies_parent = NodePath("../enemys")
 [node name="players" type="Node2D" parent="."]
 scale = Vector2(0.650787, 0.39581)
 
-[node name="personaje" parent="players" instance=ExtResource("1_p1ihv")]
+[node name="personaje" parent="players" groups=["players"] instance=ExtResource("1_p1ihv")]
 z_index = 1
-position = Vector2(370, 503)
+position = Vector2(493.249, 987.848)
+scale = Vector2(2.40251, 2.43843)
 
 [node name="Camera2D" type="Camera2D" parent="players/personaje"]
-position = Vector2(-370, -503)
+scale = Vector2(0.991698, -0.503878)
+limit_left = 100
 
-[node name="personaje2" parent="players" instance=ExtResource("1_p1ihv")]
+[node name="personaje2" parent="players" groups=["players"] instance=ExtResource("1_p1ihv")]
 z_index = 1
 position = Vector2(2839.64, 1462.82)
+scale = Vector2(2.60069, 2.21632)
 
-[node name="personaje3" parent="players" instance=ExtResource("1_p1ihv")]
+[node name="personaje3" parent="players" groups=["players"] instance=ExtResource("1_p1ihv")]
 z_index = 1
 position = Vector2(198.222, -421.92)
+scale = Vector2(2.60069, 2.21632)
 
 [node name="enemys" type="Node2D" parent="."]
 position = Vector2(395, -233)
 
 [node name="enemigo" parent="enemys" instance=ExtResource("3_okgt3")]
 z_index = 1
-position = Vector2(2261, 35)
+position = Vector2(573, 346)
 scale = Vector2(1.95092, 1.77729)
 
 [node name="enemigo2" parent="enemys" instance=ExtResource("3_okgt3")]
