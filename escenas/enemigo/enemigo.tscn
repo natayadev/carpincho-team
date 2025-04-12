@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bnytrr5yh44ld"]
 
 [ext_resource type="Script" uid="uid://b721gvfc8anv3" path="res://escenas/enemigo/enemigo.gd" id="1_r46xo"]
-[ext_resource type="Texture2D" uid="uid://drswlw24lf5w0" path="res://assets/compañero.png" id="2_07say"]
+[ext_resource type="Texture2D" uid="uid://2pvhqd30joth" path="res://art/yarara_sprites_v4.png" id="2_r46xo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5tj2"]
 size = Vector2(32, 30)
@@ -14,9 +14,10 @@ size = Vector2(77, 69.9375)
 [node name="enemigo" type="CharacterBody2D"]
 script = ExtResource("1_r46xo")
 
-[node name="Compañero" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(-1, -4)
-texture = ExtResource("2_07say")
+scale = Vector2(0.182034, 0.107217)
+texture = ExtResource("2_r46xo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_a5tj2")

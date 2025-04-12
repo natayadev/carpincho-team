@@ -12,6 +12,14 @@ var target: Node2D = null
 @onready var detection_area = $DetectionArea   # Para detectar jugadores cercanos
 @onready var timer = $Timer
 
+@onready var sprite = $Sprite
+var textures = [
+	preload("res://art/yarara_sprites_v4.png"),
+	preload("res://art/yarara_sprites_v4-2.png")
+]
+
+var texture_index = 0
+
 func _ready():
 	click_area.input_event.connect(_on_input_event)
 	timer.wait_time = fire_rate
@@ -54,6 +62,22 @@ func shoot():
 	bullet.global_position = global_position
 	bullet.set_direction(target.global_position)
 	get_tree().current_scene.add_child(bullet)
+	sprite.texture = textures[texture_index]
+	
+	# Alternar entre las texturas
+	texture_index = (texture_index + 1) % textures.size()
+
+	
+	
+
+
+
+# Lista de texturas para el cambio (puedes tener varias)
+
+
+# Variable para alternar las texturas
+
+
 
 
 
