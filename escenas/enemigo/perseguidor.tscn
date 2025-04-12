@@ -69,4 +69,7 @@ shape = SubResource("RectangleShape2D_iv871")
 scale = Vector2(15.6438, 12.3547)
 shape = SubResource("CircleShape2D_r01gy")
 
+[node name="DamageTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

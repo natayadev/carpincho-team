@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bjmr26ku2c7y6" path="res://escenas/personaje/personaje.tscn" id="1_p1ihv"]
 [ext_resource type="Script" uid="uid://gj41wu8trr63" path="res://escenas/gamemanager.gd" id="1_r0eip"]
-[ext_resource type="PackedScene" path="res://escenas/enemigo/perseguidor.tscn" id="3_drq7u"]
+[ext_resource type="PackedScene" uid="uid://blpxvpf1mr1ff" path="res://escenas/enemigo/perseguidor.tscn" id="3_drq7u"]
 [ext_resource type="PackedScene" uid="uid://bnytrr5yh44ld" path="res://escenas/enemigo/enemigo.tscn" id="3_okgt3"]
 [ext_resource type="PackedScene" uid="uid://c1ai3np7iftuy" path="res://escenas/elementos/llave.tscn" id="4_2uy5e"]
 [ext_resource type="PackedScene" uid="uid://dlb0apmyudooo" path="res://escenas/elementos/jaula.tscn" id="5_3x577"]
