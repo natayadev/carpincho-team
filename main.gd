@@ -9,6 +9,10 @@ func game_over():
 	$HUD.show_game_over()
 
 func new_game():
+	#score = 0
+	#$GameOverMusic.stop()
+	#$Player.start($StartPosition.position)
+	#$StartTimer.start()
 	get_tree().change_scene_to_file("res://escenas/nivel 1.tscn")
 	
 func _on_player_health_changed(health):
@@ -24,7 +28,6 @@ func _ready():
 
 	$HUD/HealthBar.hide()
 	$HUD/StaminaBar.hide()
-	$HUD/Creditos.hide()
 	$GameMusic.play()
 	
 	$HUD.update_health($Player.health, $Player.max_health)
