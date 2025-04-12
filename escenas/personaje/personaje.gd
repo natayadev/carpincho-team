@@ -30,7 +30,7 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		var clicked_object = get_clicked_object(event.position)
-		if clicked_object and clicked_object.is_in_group("enemies"):  # Si el clic fue sobre un enemigo
+		if clicked_object and clicked_object.is_in_group("enemigos"):  # Si el clic fue sobre un enemigo
 			attack(clicked_object)
 		else:
 			stop_attack()
