@@ -4,7 +4,7 @@ signal clicked(enemy)
 
 @export var health: int = 100
 @export var attack_range: float = 300  # Distancia de disparo
-@export var fire_rate: float = 1.5     # Tiempo entre disparos
+@export var fire_rate: float = 2     # Tiempo entre disparos
 
 var target: Node2D = null
 
